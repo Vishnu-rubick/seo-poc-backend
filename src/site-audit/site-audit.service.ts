@@ -325,14 +325,14 @@ export class SiteAuditService {
         // //     path,
         // // );
 
-        const getCampaign = await this.getCampaign(projectId);
-        const domainList = [getCampaign.projectDomain, 'peppercontent.io', 'wittypen.com'];
+        // const getCampaign = await this.getCampaign(projectId);
+        // const domainList = [getCampaign.projectDomain, 'peppercontent.io', 'wittypen.com'];
 
-        let data = await this.fetchCompetitorAnalysis(projectId, domainList);
+        // let data = await this.fetchCompetitorAnalysis(projectId, domainList);
 
         return {
             mssg: "Testing 😄",
-            data: data
+            // data: data
         }
     }
 
