@@ -1,0 +1,921 @@
+{
+  "id": 12808182,
+  "name": "TM-Test-Analysis-Rubick",
+  "url": "rubick.ai",
+  "projectDomain": "rubick.ai",
+  "status": "FINISHED",
+  "scheme": "https",
+  "errors": 19,
+  "warnings": 358,
+  "notices": 246,
+  "broken": 8,
+  "brokenDelta": 0,
+  "blocked": 3,
+  "blockedDelta": 0,
+  "redirected": 4,
+  "redirectedDelta": 0,
+  "healthy": 3,
+  "healthyDelta": 0,
+  "haveIssues": 49,
+  "haveIssuesDelta": 0,
+  "excludedBetaChecks": [],
+  "defects": {
+    "1": 1,
+    "2": 6,
+    "4": 3,
+    "8": 8,
+    "9": 1,
+    "13": 2,
+    "18": 1,
+    "103": 20,
+    "104": 6,
+    "106": 1,
+    "112": 42,
+    "123": 210,
+    "125": 1,
+    "132": 42,
+    "135": 42,
+    "205": 1,
+    "207": 128,
+    "213": 1,
+    "214": 92,
+    "217": 15
+  },
+  "markups": {
+    "twitterCard": 45,
+    "schemaOrg": 0,
+    "noMarkups": 0,
+    "hasMarkups": 45,
+    "openGraph": 45,
+    "schemaOrgJsonld": 45,
+    "microfomats": 0
+  },
+  "structuredData": {
+    "groupByPages": {
+      "noItems": 0,
+      "valid": 45,
+      "invalid": 0
+    },
+    "groupByItems": {
+      "valid": 125,
+      "invalid": 0
+    },
+    "items": [
+      {
+        "type": "BREADCRUMB",
+        "valid": 45,
+        "invalid": 0
+      },
+      {
+        "type": "FAQ",
+        "valid": 22,
+        "invalid": 0
+      },
+      {
+        "type": "SITE_NAMES",
+        "valid": 2,
+        "invalid": 0
+      },
+      {
+        "type": "SITELINKS_SEARCH_BOX",
+        "valid": 45,
+        "invalid": 0
+      },
+      {
+        "type": "ARTICLE",
+        "valid": 11,
+        "invalid": 0
+      }
+    ]
+  },
+  "depths": {
+    "0": 22,
+    "1": 36,
+    "2": 8,
+    "3": 1
+  },
+  "crawlSubdomains": false,
+  "respectCrawlDelay": false,
+  "crawlAmpFirst": "UNCHECKED",
+  "internalIncomingLinksGroups": {
+    "0": 2,
+    "1": 1,
+    "2": 6,
+    "6": 8,
+    "7": 28
+  },
+  "internalIncomingLinksGroupsList": [
+    {
+      "id": 0,
+      "leftBorder": 0,
+      "rightBorder": 0,
+      "count": 2
+    },
+    {
+      "id": 1,
+      "leftBorder": 1,
+      "rightBorder": 1,
+      "count": 1
+    },
+    {
+      "id": 2,
+      "leftBorder": 2,
+      "rightBorder": 5,
+      "count": 6
+    },
+    {
+      "id": 6,
+      "leftBorder": 6,
+      "rightBorder": 15,
+      "count": 8
+    },
+    {
+      "id": 7,
+      "leftBorder": 16,
+      "rightBorder": 50,
+      "count": 28
+    },
+    {
+      "id": 8,
+      "leftBorder": 51,
+      "rightBorder": 150,
+      "count": 0
+    },
+    {
+      "id": 9,
+      "leftBorder": 151,
+      "rightBorder": 500,
+      "count": 0
+    },
+    {
+      "id": 10,
+      "leftBorder": 501,
+      "rightBorder": 2147483647,
+      "count": 0
+    }
+  ],
+  "canonical": 42,
+  "withAmp": 0,
+  "scheduleDay": 0,
+  "crawlability": {
+    "budget": {
+      "total": 31,
+      "stats": {
+        "nonCanonicalPages": 17,
+        "permanentRedirects": 4,
+        "redirectChainsAndLoops": 0,
+        "temporaryRedirects": 0,
+        "contentDuplicates": 0,
+        "tooLargePages": 0,
+        "tooSlowPages": 0,
+        "botBlocked": 3,
+        "code4xx": 6,
+        "code5xx": 1
+      }
+    }
+  },
+  "crawlSourceType": 0,
+  "gaStatus": "NOT_CONNECTED",
+  "gaSettings": null,
+  "productGroup": "BUSINESS",
+  "isPaid": true,
+  "crawlDelaySettingTypeId": 1,
+  "ignoreRobotsDisallow": false,
+  "campaignsCount": 15,
+  "projectsCount": 16,
+  "jsRendering": null,
+  "jsImpactReportDataAvailable": false,
+  "user_agent_type": 7,
+  "last_audit": 1691671872358,
+  "last_failed_audit": 0,
+  "next_audit": -1,
+  "running_pages_crawled": 67,
+  "running_pages_limit": 1000,
+  "pages_crawled": 67,
+  "pages_crawled_delta": 0,
+  "pages_limit": 1000,
+  "total_checks": 55499,
+  "errors_delta": 0,
+  "warnings_delta": 0,
+  "notices_delta": 0,
+  "mask_allow": [],
+  "mask_disallow": [],
+  "removedParameters": [],
+  "excluded_checks": [],
+  "current_snapshot": {
+    "isPagesLimitReached": false,
+    "thematicScores": {
+      "https": {
+        "value": 99,
+        "delta": 0
+      },
+      "intSeo": {
+        "value": 100,
+        "delta": 0
+      },
+      "crawlability": {
+        "value": 90,
+        "delta": 0
+      },
+      "performance": {
+        "value": 93,
+        "delta": 0
+      },
+      "linking": {
+        "value": 87,
+        "delta": 0
+      },
+      "markups": {
+        "value": 100,
+        "delta": 0
+      }
+    },
+    "errors": [
+      {
+        "id": 1,
+        "count": 1,
+        "delta": 0,
+        "checks": 67
+      },
+      {
+        "id": 2,
+        "count": 6,
+        "delta": 0,
+        "checks": 67
+      },
+      {
+        "id": 3,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 6,
+        "count": 0,
+        "delta": 0,
+        "checks": 1078
+      },
+      {
+        "id": 7,
+        "count": 0,
+        "delta": 0,
+        "checks": 132
+      },
+      {
+        "id": 8,
+        "count": 8,
+        "delta": 0,
+        "checks": 1327
+      },
+      {
+        "id": 9,
+        "count": 1,
+        "delta": 0,
+        "checks": 67
+      },
+      {
+        "id": 10,
+        "count": 0,
+        "delta": 0,
+        "checks": 67
+      },
+      {
+        "id": 11,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 13,
+        "count": 2,
+        "delta": 0,
+        "checks": 834
+      },
+      {
+        "id": 15,
+        "count": 0,
+        "delta": 0,
+        "checks": 1188
+      },
+      {
+        "id": 16,
+        "count": 0,
+        "delta": 0,
+        "checks": 1
+      },
+      {
+        "id": 17,
+        "count": 0,
+        "delta": 0,
+        "checks": 9
+      },
+      {
+        "id": 18,
+        "count": 1,
+        "delta": 0,
+        "checks": 25
+      },
+      {
+        "id": 19,
+        "count": 0,
+        "delta": 0,
+        "checks": 2
+      },
+      {
+        "id": 20,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 21,
+        "count": 0,
+        "delta": 0,
+        "checks": 56
+      },
+      {
+        "id": 22,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 23,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 24,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 25,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 26,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 27,
+        "count": 0,
+        "delta": 0,
+        "checks": 2
+      },
+      {
+        "id": 28,
+        "count": 0,
+        "delta": 0,
+        "checks": 2
+      },
+      {
+        "id": 29,
+        "count": 0,
+        "delta": 0,
+        "checks": 2
+      },
+      {
+        "id": 30,
+        "count": 0,
+        "delta": 0,
+        "checks": 4856
+      },
+      {
+        "id": 32,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 33,
+        "count": 0,
+        "delta": 0,
+        "checks": 5429
+      },
+      {
+        "id": 34,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 35,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 36,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 38,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 39,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 40,
+        "count": 0,
+        "delta": 0,
+        "checks": 45
+      },
+      {
+        "id": 41,
+        "count": 0,
+        "delta": 0,
+        "checks": 3532
+      },
+      {
+        "id": 42,
+        "count": 0,
+        "delta": 0,
+        "checks": 2
+      },
+      {
+        "id": 43,
+        "count": 0,
+        "delta": 0,
+        "checks": 9
+      },
+      {
+        "id": 44,
+        "count": 0,
+        "delta": 0,
+        "checks": 1606
+      },
+      {
+        "id": 45,
+        "count": 0,
+        "delta": 0,
+        "checks": 119
+      },
+      {
+        "id": 46,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 111,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      }
+    ],
+    "warnings": [
+      {
+        "id": 12,
+        "count": 0,
+        "delta": 0,
+        "checks": 89
+      },
+      {
+        "id": 14,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 31,
+        "count": 0,
+        "delta": 0,
+        "checks": 1349
+      },
+      {
+        "id": 101,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 102,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 103,
+        "count": 20,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 105,
+        "count": 0,
+        "delta": 0,
+        "checks": 22
+      },
+      {
+        "id": 106,
+        "count": 1,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 108,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 109,
+        "count": 0,
+        "delta": 0,
+        "checks": 5429
+      },
+      {
+        "id": 110,
+        "count": 0,
+        "delta": 0,
+        "checks": 419
+      },
+      {
+        "id": 112,
+        "count": 42,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 113,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 114,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 115,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 116,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 117,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 120,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 121,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 122,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 123,
+        "count": 210,
+        "delta": 0,
+        "checks": 1517
+      },
+      {
+        "id": 124,
+        "count": 0,
+        "delta": 0,
+        "checks": 1
+      },
+      {
+        "id": 125,
+        "count": 1,
+        "delta": 0,
+        "checks": 10
+      },
+      {
+        "id": 126,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 127,
+        "count": 0,
+        "delta": 0,
+        "checks": 2
+      },
+      {
+        "id": 128,
+        "count": 0,
+        "delta": 0,
+        "checks": 153
+      },
+      {
+        "id": 129,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 130,
+        "count": 0,
+        "delta": 0,
+        "checks": 3949
+      },
+      {
+        "id": 131,
+        "count": 0,
+        "delta": 0,
+        "checks": 3616
+      },
+      {
+        "id": 132,
+        "count": 42,
+        "delta": 0,
+        "checks": 3616
+      },
+      {
+        "id": 133,
+        "count": 0,
+        "delta": 0,
+        "checks": 53
+      },
+      {
+        "id": 134,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 135,
+        "count": 42,
+        "delta": 0,
+        "checks": 3616
+      },
+      {
+        "id": 136,
+        "count": 0,
+        "delta": 0,
+        "checks": 1606
+      }
+    ],
+    "notices": [
+      {
+        "id": 104,
+        "count": 6,
+        "delta": 0,
+        "checks": 22
+      },
+      {
+        "id": 4,
+        "count": 3,
+        "delta": 0,
+        "checks": 45
+      },
+      {
+        "id": 201,
+        "count": 0,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 202,
+        "count": 0,
+        "delta": 0,
+        "checks": 257
+      },
+      {
+        "id": 203,
+        "count": 0,
+        "delta": 0,
+        "checks": 1
+      },
+      {
+        "id": 204,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 205,
+        "count": 1,
+        "delta": 0,
+        "checks": 2
+      },
+      {
+        "id": 206,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 207,
+        "count": 128,
+        "delta": 0,
+        "checks": 153
+      },
+      {
+        "id": 208,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 209,
+        "count": 0,
+        "delta": 0,
+        "checks": 0
+      },
+      {
+        "id": 210,
+        "count": 0,
+        "delta": 0,
+        "checks": 84
+      },
+      {
+        "id": 211,
+        "count": 0,
+        "delta": 0,
+        "checks": 84
+      },
+      {
+        "id": 212,
+        "count": 0,
+        "delta": 0,
+        "checks": 53
+      },
+      {
+        "id": 213,
+        "count": 1,
+        "delta": 0,
+        "checks": 42
+      },
+      {
+        "id": 214,
+        "count": 92,
+        "delta": 0,
+        "checks": 5429
+      },
+      {
+        "id": 215,
+        "count": 0,
+        "delta": 0,
+        "checks": 1606
+      },
+      {
+        "id": 216,
+        "count": 0,
+        "delta": 0,
+        "checks": 348
+      },
+      {
+        "id": 217,
+        "count": 15,
+        "delta": 0,
+        "checks": 348
+      },
+      {
+        "id": 218,
+        "count": 0,
+        "delta": 0,
+        "checks": 172
+      }
+    ],
+    "topIssues": [
+      2,
+      18,
+      103,
+      1,
+      9
+    ],
+    "hidden": {},
+    "fixed": {
+      "1": 0,
+      "2": 5,
+      "4": 1,
+      "6": 8,
+      "7": 4,
+      "8": 85,
+      "9": 0,
+      "13": 0,
+      "18": 0,
+      "102": 2,
+      "103": 5,
+      "104": 3,
+      "105": 1,
+      "106": 17,
+      "112": 26,
+      "123": 127,
+      "125": 0,
+      "132": 0,
+      "135": 73,
+      "205": 0,
+      "207": 21,
+      "213": 14,
+      "214": 164,
+      "217": 88
+    },
+    "statusCodeGroups": {
+      "0": 1,
+      "2": 55,
+      "3": 4,
+      "4": 6,
+      "5": 1
+    },
+    "excludedChecks": [],
+    "settingsChanged": false,
+    "jsRendering": null,
+    "snapshot_id": "64d4dbcfa72b41463073bc61",
+    "snapshot_version": 15,
+    "pages_crawled": 67,
+    "pages_limit": 1000,
+    "finish_date": 1691671872358,
+    "quality": {
+      "value": 80,
+      "delta": 0
+    },
+    "user_agent_type": 7,
+    "new": {
+      "1": 1,
+      "2": 11,
+      "4": 4,
+      "6": 8,
+      "7": 4,
+      "8": 93,
+      "9": 1,
+      "13": 2,
+      "18": 1,
+      "102": 2,
+      "103": 25,
+      "104": 9,
+      "105": 1,
+      "106": 18,
+      "112": 68,
+      "123": 337,
+      "125": 1,
+      "132": 42,
+      "135": 115,
+      "205": 1,
+      "207": 149,
+      "213": 15,
+      "214": 256,
+      "217": 103
+    }
+  },
+  "is_notify": false,
+  "ampTotal": 0,
+  "hreflangs": {
+    "totalPages": 0,
+    "badPages": 0,
+    "missing": 0
+  },
+  "xdefault": 0,
+  "sitemaps": {
+    "crawledPages": 25,
+    "totalPages": 153,
+    "count": 10,
+    "reprUrl": "https://rubick.ai/post-sitemap.xml",
+    "status": "HAVE_HEALTHY"
+  },
+  "canonicalization": {
+    "emptyOrWithoutCanonicalLink": 25,
+    "selfCanonical": 25,
+    "canonicalToOtherPage": 17
+  },
+  "uploadUrlsCount": 0,
+  "crawlSourceUrl": null,
+  "precrawlError": null,
+  "is_allowed_stopping": false,
+  "robots": {
+    "status": 1,
+    "link": "https://rubick.ai/robots.txt",
+    "errors": 0,
+    "changes": 0
+  },
+  "authEnabled": false
+}
