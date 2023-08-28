@@ -448,16 +448,42 @@ export class SiteAuditService {
 
     async getPagesDetails(projectId: string, page: number, type?: string) {
         const pagesDetails = await this.fetchFileData(`./data/${projectId}_pages_description.json`);
+        let campaignData = await this.fetchFileData(`./data/${projectId}_campaign_data.json`);
 
         let result = []
         // let low = page*10, high = Math.min(pagesDetails.length, page*10 + 10);
         let low = 0, high = pagesDetails.length;
         for(let idx = low; idx < high; ++idx){
+            let pageObj = pagesDetails[idx]
+            let issues = pageObj.issues;
+            let categories = [], priorities = [];
+
+            issues.forEach((issue: any) => {
+                if(campaignData.current_snapshot.errors.find((iss) => (iss.id == issue.data.id))){
+                    priorities.push('P0')
+                    categories.push(issue.data.category)
+                };
+            })
+
+            issues.forEach((issue: any) => {
+                if(campaignData.current_snapshot.warnings.find((iss) => (iss.id == issue.data.id))){
+                    priorities.push('P1')
+                    categories.push(issue.data.category)
+                };
+            })
+
+            issues.forEach((issue: any) => {
+                if(campaignData.current_snapshot.notices.find((iss) => (iss.id == issue.data.id))){
+                    priorities.push('P2')
+                    categories.push(issue.data.category)
+                };
+            })
+
             result.push({
-                pageUrl: pagesDetails[idx].pageUrl,
-                noOfIssues: pagesDetails[idx].issues.length,
-                category: '--',
-                priority: '--',
+                pageUrl: pageObj.pageUrl,
+                noOfIssues: pageObj.issues.length,
+                category: categories,
+                priority: priorities,
             })
         }
         
