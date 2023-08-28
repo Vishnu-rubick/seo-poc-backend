@@ -1,1 +1,46 @@
-[{"Domain":"rubick.ai","Domain Authority":"NA","Organic Search Traffic":"0","Paid Search Traffic":"230","Visitors":"461","Unique Visitors":"NA","Avg. Visit Duration":"0","Bounce Rate":"1","Traffic Share":0.10937700188384686},{"Domain":"peppercontent.io","Domain Authority":"NA","Organic Search Traffic":"0","Paid Search Traffic":"79871","Visitors":"414397","Unique Visitors":"NA","Avg. Visit Duration":"0","Bounce Rate":"1.0286","Traffic Share":98.3199597606518},{"Domain":"wittypen.com","Domain Authority":"NA","Organic Search Traffic":"1524","Paid Search Traffic":"0","Visitors":"6620","Unique Visitors":"NA","Avg. Visit Duration":"0","Bounce Rate":"3.2222","Traffic Share":1.5706632374643517}]
+[
+    {
+        "Domain": "rubick.ai",
+        "Domain Authority": "NA",
+        "Organic Search Traffic": "0",
+        "Paid Search Traffic": "230",
+        "Visitors": "461",
+        "Unique Visitors": "NA",
+        "Avg. Visit Duration": "0",
+        "Bounce Rate": "1",
+        "Traffic Share": 0.003678058648839225
+    },
+    {
+        "Domain": "writesonic.com",
+        "Domain Authority": "NA",
+        "Organic Search Traffic": "133749",
+        "Paid Search Traffic": "1702688",
+        "Visitors": "5981780",
+        "Unique Visitors": "NA",
+        "Avg. Visit Duration": "0",
+        "Bounce Rate": "1.9472",
+        "Traffic Share": 47.72524439143926
+    },
+    {
+        "Domain": "peppercontent.io",
+        "Domain Authority": "NA",
+        "Organic Search Traffic": "0",
+        "Paid Search Traffic": "79871",
+        "Visitors": "414397",
+        "Unique Visitors": "NA",
+        "Avg. Visit Duration": "0",
+        "Bounce Rate": "1.0286",
+        "Traffic Share": 3.3062396310260924
+    },
+    {
+        "Domain": "jasper.ai",
+        "Domain Authority": "NA",
+        "Organic Search Traffic": "1418512",
+        "Paid Search Traffic": "72984",
+        "Visitors": "6137148",
+        "Unique Visitors": "NA",
+        "Avg. Visit Duration": "339",
+        "Bounce Rate": "0.4851",
+        "Traffic Share": 48.9648379188858
+    }
+]

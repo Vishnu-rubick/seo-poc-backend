@@ -22,7 +22,7 @@ export class ProjectService {
         })
     }
 
-    async setup(domain: string, pageLimit: number, crawlSubdomains: boolean) {
+    async setup(domain: string, pageLimit: number, crawlSubdomains: boolean = false) {
         const projects: any = await this.fetchFileData(`./data/projects_data.json`)
 
         if(projects.hasOwnProperty(domain)){

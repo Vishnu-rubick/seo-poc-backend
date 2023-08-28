@@ -4,6 +4,7 @@ import { ProjectService } from './project.service';
 
 import { ApiBearerAuth, ApiBody, ApiConsumes, ApiTags } from '@nestjs/swagger';
 import { ConfigDto } from './dto/config.dto';
+import { SetupDto } from './dto/setup.dto';
 
 
 @Controller('project')
@@ -23,6 +24,13 @@ export class ProjectController {
     @Get('/config')
     async getConfig() {
         return await this.projectService.getConfig();
+    }
+
+    @Post('/setup')
+    async setup(
+        @Body() setupDto: SetupDto
+    ) {
+        return await this.projectService.setup(setupDto.domain, setupDto.pageimit, setupDto?.crawlsubdomains);
     }
 
     @Post('/config')
