@@ -3,6 +3,7 @@ import { CreateProjectDto } from './dto/create-project.dto';
 import { ProjectService } from './project.service';
 
 import { ApiBearerAuth, ApiBody, ApiConsumes, ApiTags } from '@nestjs/swagger';
+import { ConfigDto } from './dto/config.dto';
 
 
 @Controller('project')
@@ -17,5 +18,17 @@ export class ProjectController {
         @Body() createProjectDto: CreateProjectDto
     ) {
         return await this.projectService.createProject(createProjectDto);
+    }
+
+    @Get('/config')
+    async getConfig() {
+        return await this.projectService.getConfig();
+    }
+
+    @Post('/config')
+    async saveConfig(
+        @Body() configDto: ConfigDto
+    ) {
+        return await this.projectService.saveConfig(configDto);
     }
 }

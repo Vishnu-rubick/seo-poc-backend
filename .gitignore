@@ -5,6 +5,9 @@
 /dist
 /node_modules
 
+# vscode config
+.vscode
+
 # Logs
 logs
 *.log

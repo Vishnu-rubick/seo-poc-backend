@@ -33,6 +33,18 @@ export class ProjectRepository {
         return response.data;
     }
 
+    async enableSiteAudit(projectId: string, domain: string, options?: any) {
+        const response = await this.http.post(`${this.SEM_RUSH_BASE_URL}/management/v1/projects/${projectId}/siteaudit/enable?key=${this.SEM_RUSH_API_KEY}`, {
+            "domain": domain || "",
+            "scheduleDay": 0,
+            "notify": options?.notify || true,
+            "crawlSubdomains": options?.crawlSubdomains || false,
+            "pageLimit": options?.pageLimit || 400,
+            "respectCrawlDelay": false
+        }).toPromise();
+        return response.data;
+    }
+
     async createProject(createProjectDto: CreateProjectDto) {
         const projects = await this.fetchFileData(`./data/projects_data.json`);
         
@@ -41,7 +53,7 @@ export class ProjectRepository {
             data: projects[createProjectDto.domainUrl],
         }
 
-        // const project = await this.create(createProjectDto);
+        const project = await this.create(createProjectDto);
 
         return {
             message: "Project has been created",
