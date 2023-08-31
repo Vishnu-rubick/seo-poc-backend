@@ -30,7 +30,7 @@ export class ProjectController {
     async setup(
         @Body() setupDto: SetupDto
     ) {
-        return await this.projectService.setup(setupDto.domain, setupDto.pageimit, setupDto?.crawlsubdomains);
+        return await this.projectService.setup(setupDto.domain, setupDto.pageLimit, setupDto?.crawlsubdomains);
     }
 
     @Post('/config')

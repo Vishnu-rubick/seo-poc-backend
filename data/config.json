@@ -1,6 +1,6 @@
 {
-    "domain": "rubick.ai",
-    "industry": "",
-    "geography": "",
-    "competitors": ["peppercontent.io", "Writesonic.com", "Jasper.ai"]
+  "domain": "neetcode.io",
+  "industry": "education",
+  "geography": "india",
+  "competitors": ["rubick.ai", "textmercato.com"]
 }

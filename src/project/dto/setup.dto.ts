@@ -17,7 +17,7 @@ export class SetupDto {
 
     @ApiProperty()
     @IsNumber()
-    pageimit: number;
+    pageLimit: number;
 
     @ApiProperty()
     @IsBoolean()

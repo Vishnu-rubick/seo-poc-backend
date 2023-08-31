@@ -35,7 +35,7 @@ export class SiteAuditController {
     async runAudit(
         @Body() runAuditDto: RunAuditDto,
     ) {
-        return await this.siteAuditService.runAudit(runAuditDto.projectId);
+        return await this.siteAuditService.runAudit(runAuditDto.projectId, runAuditDto.domain, runAuditDto.pageLimit, runAuditDto.crawlSubdomains);
     }
 
     @Get('/competitorAnalysis/:projectId')

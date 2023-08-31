@@ -18,18 +18,18 @@ export class ProjectRepository {
         this.SEM_RUSH_API_KEY = configService.get('SEM_RUSH_API_KEY');
         this.SEM_RUSH_BASE_URL = configService.get('SEM_RUSH_BASE_URL');
     }
-    
-    async fetchFileData(filePath: string){
+
+    async fetchFileData(filePath: string) {
         let content = '';
-        if(fs.existsSync(filePath))    content = fs.readFileSync(filePath, 'utf-8');
-        if(!content || !content.length) return null;
+        if (fs.existsSync(filePath)) content = fs.readFileSync(filePath, 'utf-8');
+        if (!content || !content.length) return null;
         let data = JSON.parse(content);
 
         return data;
     }
 
     async create(createProjectDto: CreateProjectDto) {
-        const response = await this.http.post(`${this.SEM_RUSH_BASE_URL}/management/v1/projects?key=${this.SEM_RUSH_API_KEY}`).toPromise();
+        const response = await this.http.post(`${this.SEM_RUSH_BASE_URL}/management/v1/projects?key=${this.SEM_RUSH_API_KEY}`, { url: createProjectDto.domainUrl, project_name: createProjectDto.name }).toPromise();
         return response.data;
     }
 
@@ -47,8 +47,8 @@ export class ProjectRepository {
 
     async createProject(createProjectDto: CreateProjectDto) {
         const projects = await this.fetchFileData(`./data/projects_data.json`);
-        
-        if(projects[createProjectDto.domainUrl])    return {
+
+        if (projects[createProjectDto.domainUrl]) return {
             message: 'Project with the given domain already exists',
             data: projects[createProjectDto.domainUrl],
         }
@@ -57,7 +57,7 @@ export class ProjectRepository {
 
         return {
             message: "Project has been created",
-            data: {}
+            data: project
         };
     }
 }

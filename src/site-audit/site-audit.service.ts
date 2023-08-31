@@ -24,7 +24,14 @@ export class SiteAuditService {
         this.SEM_RUSH_BASE_URL = configService.get('SEM_RUSH_BASE_URL');
     }
 
-    async runAudit(projectId: string) {
+    async runAudit(projectId: string, domain: string, pageLimit: number, crawlSubdomains: boolean) {
+        const editSettings = await this.updateCampaign(projectId, {
+            pageLimit: pageLimit,
+            crawlSubdomains: crawlSubdomains,
+            domain: domain,
+            notify: false,
+            scheduleDay: 0
+        })
         const runAuditResponse = await this.http.post(`${this.SEM_RUSH_BASE_URL}/reports/v1/projects/${projectId}/siteaudit/launch?key=${this.SEM_RUSH_API_KEY}`).toPromise();
         const snapshotId = runAuditResponse.data.snapshot_id;
         return snapshotId;  
@@ -157,6 +164,24 @@ export class SiteAuditService {
         // else fs.writeFileSync(`./data/${projectId}_issues_description.json`, JSON.stringify(issuesResult, null, 2), 'utf-8');
         fs.writeFileSync(`./data/${projectId}_issues_description.json`, JSON.stringify(issuesResult, null, 2), 'utf-8');
 
+        const issueData = await this.getIssues(projectId);
+        const issueCSVData = this.getCSV(issueData);
+        const issuePath = `projects/serp/${projectId}/issues-csv.csv`;
+        const issueS3Response = await this.s3Service.s3_upload(
+            issueCSVData,
+            process.env.AWS_BUCKET_NAME,
+            issuePath,
+        );
+
+        const pageData = await this.getPagesDetails(projectId, 0);
+        const pageCSVData = this.getCSV(pageData);
+        const pagePath = `projects/serp/${projectId}/pages-csv.csv`;
+        const pageS3Response = await this.s3Service.s3_upload(
+            pageCSVData,
+            process.env.AWS_BUCKET_NAME,
+            pagePath,
+        );
+
         return issuesResult;
     }
 
@@ -203,7 +228,6 @@ export class SiteAuditService {
         });
 
         if(!jsonData.length)    throw new NotFoundException('Competitor Analysis Not Found')
-
         
         // save csv to s3 :)
         let formattedJson = [];
@@ -484,6 +508,7 @@ export class SiteAuditService {
                 noOfIssues: pageObj.issues.length,
                 category: categories,
                 priority: priorities,
+                issues: pageObj.issues
             })
         }
         

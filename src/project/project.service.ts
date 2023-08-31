@@ -32,14 +32,14 @@ export class ProjectService {
         // creating a project
         const project: any = await this.createProject({
             domainUrl: domain,
-            name: domain
+            name: `testing-${domain}`   // For development
         })
 
         //enabling site-audit
-        await this.enableSiteAudit(project.project_id, domain, pageLimit, crawlSubdomains);
+        await this.enableSiteAudit(project.data.project_id, domain, pageLimit, crawlSubdomains);
         
         projects[domain] = {
-            projectId: project.project_id
+            projectId: project.data.project_id
         }
 
         await this.saveFile(`./data/projects_data.json`, JSON.stringify(projects))

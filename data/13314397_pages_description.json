@@ -1,0 +1,89 @@
+[
+    {
+        "pageUrl": "https://neetcode.io/",
+        "issues": [
+            {
+                "num": 0,
+                "title": "NeetCode.io",
+                "discovered": 1693468131649,
+                "page_id": "64f04cedec7f356f63129489",
+                "source_url": "https://neetcode.io/",
+                "data": {
+                    "id": 103,
+                    "title": "Missing h1",
+                    "title_page": "##count## pages have no H1 heading on them",
+                    "url_column": "",
+                    "info_column": "",
+                    "category": "tech"
+                }
+            },
+            {
+                "num": 1,
+                "title": "NeetCode.io",
+                "discovered": 1693468131649,
+                "info": "0.04",
+                "page_id": "64f04cedec7f356f63129489",
+                "source_url": "https://neetcode.io/",
+                "data": {
+                    "id": 112,
+                    "title": "Low text to HTML ratio",
+                    "title_page": "##count## pages have a low text/HTML ratio",
+                    "url_column": "",
+                    "info_column": "Ratio",
+                    "category": "markup"
+                }
+            },
+            {
+                "num": 2,
+                "title": "NeetCode.io",
+                "discovered": 1693468131649,
+                "info": 7,
+                "page_id": "64f04cedec7f356f63129489",
+                "source_url": "https://neetcode.io/",
+                "data": {
+                    "id": 117,
+                    "title": "Low word count",
+                    "title_page": "##count## pages have small amount of content (word count)",
+                    "url_column": "",
+                    "info_column": "Words number",
+                    "category": "markup"
+                }
+            },
+            {
+                "num": 3,
+                "title": "NeetCode.io",
+                "discovered": 1693468131649,
+                "page_id": "64f04cedec7f356f63129489",
+                "source_url": "https://neetcode.io/",
+                "data": {
+                    "id": 213,
+                    "title": "Pages with only one internal link",
+                    "title_page": "##count## pages with only one internal link",
+                    "url_column": "",
+                    "info_column": "",
+                    "category": "crawl"
+                }
+            }
+        ]
+    },
+    {
+        "pageUrl": "https://www.neetcode.io/",
+        "issues": [
+            {
+                "num": 0,
+                "title": "",
+                "discovered": 1693468131649,
+                "page_id": "64f04cedec7f356f6312949f",
+                "source_url": "https://www.neetcode.io/",
+                "data": {
+                    "id": 205,
+                    "title": "No HSTS support",
+                    "title_page": "No HSTS support",
+                    "url_column": "",
+                    "info_column": "",
+                    "category": "tech"
+                }
+            }
+        ]
+    }
+]
