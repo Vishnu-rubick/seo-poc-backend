@@ -114,7 +114,6 @@ export class SiteAuditService {
 
     async updateCampaign(projectId: string, updateCampaignDto: UpdateCampaignDto) {
         try{
-            console.log('upadte: ', updateCampaignDto);
             const apiUrl = `${this.SEM_RUSH_BASE_URL}/management/v1/projects/${projectId}/siteaudit/save?key=${this.SEM_RUSH_API_KEY}`;
             let updatedCampaign = await this.http.post(apiUrl, updateCampaignDto).toPromise();
             return updatedCampaign.data;
@@ -207,9 +206,10 @@ export class SiteAuditService {
 
     async getCompetitorAnalysis(projectId: string) {    
         let competitorData = null;
+        console.time('hola')
         let config = await this.fetchFileData(`./data/config.json`);
         if(fs.existsSync(`./data/${projectId}_2023-07-01_competitor_Analysis.json`)) competitorData = await this.fetchFileData(`./data/${projectId}_2023-07-01_competitor_Analysis.json`);
-
+        console.timeEnd('hola')
         return competitorData;
     }
 
@@ -378,8 +378,6 @@ export class SiteAuditService {
                 const issueMappedObj = issueCategoryMap.find(issue => (issue.id == issueId))
                 
                 if(!obj || type != "" && issueMappedObj?.category != type)  continue;
-                console.log(obj)
-                console.log(issueId, issueMappedObj?.category, type, issueMappedObj?.category==type)
                 if(!ans.hasOwnProperty(obj.source_url)) ans[obj.source_url] = []
                 let issueReport = {
                     ...obj,

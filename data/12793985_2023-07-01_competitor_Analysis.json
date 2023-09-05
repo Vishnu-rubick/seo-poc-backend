@@ -1,0 +1,35 @@
+[
+    {
+        "Domain": "textmercato.com",
+        "Domain Authority": "NA",
+        "Organic Search Traffic": "1104",
+        "Paid Search Traffic": "1104",
+        "Visitors": "6508",
+        "Unique Visitors": "NA",
+        "Avg. Visit Duration": "0",
+        "Bounce Rate": "0",
+        "Traffic Share": 0.07155787699609972
+    },
+    {
+        "Domain": "neetcode.io",
+        "Domain Authority": "NA",
+        "Organic Search Traffic": "229949",
+        "Paid Search Traffic": "0",
+        "Visitors": "1765958",
+        "Unique Visitors": "NA",
+        "Avg. Visit Duration": "583",
+        "Bounce Rate": "0.7543",
+        "Traffic Share": 19.4173640664226
+    },
+    {
+        "Domain": "practice.geeksforgeeks.org",
+        "Domain Authority": "NA",
+        "Organic Search Traffic": "1673806",
+        "Paid Search Traffic": "169310",
+        "Visitors": "7322270",
+        "Unique Visitors": "NA",
+        "Avg. Visit Duration": "1045",
+        "Bounce Rate": "0.4976",
+        "Traffic Share": 80.5110780565813
+    }
+]
