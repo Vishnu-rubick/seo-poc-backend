@@ -3,143 +3,142 @@
   "name": "TM-Test-Analysis-Rubick",
   "url": "rubick.ai",
   "projectDomain": "rubick.ai",
-  "status": "FINISHED",
+  "status": "RUNNING",
   "scheme": "https",
-  "errors": 19,
-  "warnings": 358,
-  "notices": 246,
-  "broken": 8,
-  "brokenDelta": 0,
-  "blocked": 3,
-  "blockedDelta": 0,
-  "redirected": 4,
-  "redirectedDelta": 0,
+  "errors": 22,
+  "warnings": 558,
+  "notices": 347,
+  "broken": 5,
+  "brokenDelta": 2,
+  "blocked": 6,
+  "blockedDelta": 1,
+  "redirected": 3,
+  "redirectedDelta": -1,
   "healthy": 3,
   "healthyDelta": 0,
-  "haveIssues": 49,
-  "haveIssuesDelta": 0,
+  "haveIssues": 66,
+  "haveIssuesDelta": -1,
   "excludedBetaChecks": [],
   "defects": {
-    "1": 1,
-    "2": 6,
-    "4": 3,
-    "8": 8,
-    "9": 1,
-    "13": 2,
-    "18": 1,
-    "103": 20,
-    "104": 6,
-    "106": 1,
-    "112": 42,
-    "123": 210,
+    "1": 3,
+    "2": 2,
+    "4": 6,
+    "8": 13,
+    "13": 4,
+    "103": 24,
+    "104": 7,
+    "106": 2,
+    "112": 59,
+    "123": 354,
     "125": 1,
-    "132": 42,
-    "135": 42,
-    "205": 1,
-    "207": 128,
-    "213": 1,
-    "214": 92,
-    "217": 15
+    "132": 59,
+    "135": 59,
+    "205": 2,
+    "207": 171,
+    "212": 1,
+    "214": 122,
+    "217": 38
   },
   "markups": {
-    "twitterCard": 45,
+    "twitterCard": 65,
     "schemaOrg": 0,
     "noMarkups": 0,
-    "hasMarkups": 45,
-    "openGraph": 45,
-    "schemaOrgJsonld": 45,
+    "hasMarkups": 65,
+    "openGraph": 65,
+    "schemaOrgJsonld": 65,
     "microfomats": 0
   },
   "structuredData": {
     "groupByPages": {
       "noItems": 0,
-      "valid": 45,
+      "valid": 65,
       "invalid": 0
     },
     "groupByItems": {
-      "valid": 125,
+      "valid": 178,
       "invalid": 0
     },
     "items": [
       {
-        "type": "BREADCRUMB",
-        "valid": 45,
-        "invalid": 0
-      },
-      {
         "type": "FAQ",
-        "valid": 22,
-        "invalid": 0
-      },
-      {
-        "type": "SITE_NAMES",
-        "valid": 2,
-        "invalid": 0
-      },
-      {
-        "type": "SITELINKS_SEARCH_BOX",
-        "valid": 45,
+        "valid": 24,
         "invalid": 0
       },
       {
         "type": "ARTICLE",
-        "valid": 11,
+        "valid": 20,
+        "invalid": 0
+      },
+      {
+        "type": "SITE_NAMES",
+        "valid": 4,
+        "invalid": 0
+      },
+      {
+        "type": "SITELINKS_SEARCH_BOX",
+        "valid": 65,
+        "invalid": 0
+      },
+      {
+        "type": "BREADCRUMB",
+        "valid": 65,
         "invalid": 0
       }
     ]
   },
   "depths": {
     "0": 22,
-    "1": 36,
-    "2": 8,
-    "3": 1
+    "1": 41,
+    "2": 14,
+    "3": 5,
+    "4": 1
   },
   "crawlSubdomains": false,
   "respectCrawlDelay": false,
   "crawlAmpFirst": "UNCHECKED",
   "internalIncomingLinksGroups": {
-    "0": 2,
-    "1": 1,
-    "2": 6,
-    "6": 8,
-    "7": 28
+    "0": 3,
+    "2": 11,
+    "6": 13,
+    "7": 16,
+    "8": 22
   },
   "internalIncomingLinksGroupsList": [
     {
       "id": 0,
       "leftBorder": 0,
       "rightBorder": 0,
-      "count": 2
+      "count": 3
     },
     {
       "id": 1,
       "leftBorder": 1,
       "rightBorder": 1,
-      "count": 1
+      "count": 0
     },
     {
       "id": 2,
       "leftBorder": 2,
       "rightBorder": 5,
-      "count": 6
+      "count": 11
     },
     {
       "id": 6,
       "leftBorder": 6,
       "rightBorder": 15,
-      "count": 8
+      "count": 13
     },
     {
       "id": 7,
       "leftBorder": 16,
       "rightBorder": 50,
-      "count": 28
+      "count": 16
     },
     {
       "id": 8,
       "leftBorder": 51,
       "rightBorder": 150,
-      "count": 0
+      "count": 22
     },
     {
       "id": 9,
@@ -154,23 +153,23 @@
       "count": 0
     }
   ],
-  "canonical": 42,
+  "canonical": 59,
   "withAmp": 0,
   "scheduleDay": 0,
   "crawlability": {
     "budget": {
-      "total": 31,
+      "total": 48,
       "stats": {
-        "nonCanonicalPages": 17,
-        "permanentRedirects": 4,
+        "nonCanonicalPages": 34,
+        "permanentRedirects": 3,
         "redirectChainsAndLoops": 0,
         "temporaryRedirects": 0,
         "contentDuplicates": 0,
         "tooLargePages": 0,
         "tooSlowPages": 0,
-        "botBlocked": 3,
-        "code4xx": 6,
-        "code5xx": 1
+        "botBlocked": 6,
+        "code4xx": 2,
+        "code5xx": 3
       }
     }
   },
@@ -181,23 +180,23 @@
   "isPaid": true,
   "crawlDelaySettingTypeId": 1,
   "ignoreRobotsDisallow": false,
-  "campaignsCount": 15,
-  "projectsCount": 16,
+  "campaignsCount": 17,
+  "projectsCount": 19,
   "jsRendering": null,
   "jsImpactReportDataAvailable": false,
   "user_agent_type": 7,
-  "last_audit": 1691671872358,
+  "last_audit": 1693824318556,
   "last_failed_audit": 0,
   "next_audit": -1,
-  "running_pages_crawled": 67,
+  "running_pages_crawled": 8,
   "running_pages_limit": 1000,
-  "pages_crawled": 67,
-  "pages_crawled_delta": 0,
+  "pages_crawled": 83,
+  "pages_crawled_delta": 1,
   "pages_limit": 1000,
-  "total_checks": 55499,
-  "errors_delta": 0,
-  "warnings_delta": 0,
-  "notices_delta": 0,
+  "total_checks": 78148,
+  "errors_delta": 12,
+  "warnings_delta": 51,
+  "notices_delta": 52,
   "mask_allow": [],
   "mask_disallow": [],
   "removedParameters": [],
@@ -223,7 +222,7 @@
       },
       "linking": {
         "value": 87,
-        "delta": 0
+        "delta": 1
       },
       "markups": {
         "value": 100,
@@ -233,51 +232,51 @@
     "errors": [
       {
         "id": 1,
-        "count": 1,
-        "delta": 0,
-        "checks": 67
+        "count": 3,
+        "delta": 2,
+        "checks": 83
       },
       {
         "id": 2,
-        "count": 6,
+        "count": 2,
         "delta": 0,
-        "checks": 67
+        "checks": 83
       },
       {
         "id": 3,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 6,
         "count": 0,
         "delta": 0,
-        "checks": 1078
+        "checks": 886
       },
       {
         "id": 7,
         "count": 0,
         "delta": 0,
-        "checks": 132
+        "checks": 48
       },
       {
         "id": 8,
-        "count": 8,
-        "delta": 0,
-        "checks": 1327
+        "count": 13,
+        "delta": 11,
+        "checks": 1966
       },
       {
         "id": 9,
-        "count": 1,
+        "count": 0,
         "delta": 0,
-        "checks": 67
+        "checks": 83
       },
       {
         "id": 10,
         "count": 0,
         "delta": 0,
-        "checks": 67
+        "checks": 83
       },
       {
         "id": 11,
@@ -287,15 +286,15 @@
       },
       {
         "id": 13,
-        "count": 2,
+        "count": 4,
         "delta": 0,
-        "checks": 834
+        "checks": 1284
       },
       {
         "id": 15,
         "count": 0,
         "delta": 0,
-        "checks": 1188
+        "checks": 928
       },
       {
         "id": 16,
@@ -311,9 +310,9 @@
       },
       {
         "id": 18,
-        "count": 1,
-        "delta": 0,
-        "checks": 25
+        "count": 0,
+        "delta": -1,
+        "checks": 24
       },
       {
         "id": 19,
@@ -331,7 +330,7 @@
         "id": 21,
         "count": 0,
         "delta": 0,
-        "checks": 56
+        "checks": 72
       },
       {
         "id": 22,
@@ -385,7 +384,7 @@
         "id": 30,
         "count": 0,
         "delta": 0,
-        "checks": 4856
+        "checks": 6692
       },
       {
         "id": 32,
@@ -397,7 +396,7 @@
         "id": 33,
         "count": 0,
         "delta": 0,
-        "checks": 5429
+        "checks": 7773
       },
       {
         "id": 34,
@@ -421,25 +420,25 @@
         "id": 38,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 39,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 40,
         "count": 0,
         "delta": 0,
-        "checks": 45
+        "checks": 65
       },
       {
         "id": 41,
         "count": 0,
         "delta": 0,
-        "checks": 3532
+        "checks": 4894
       },
       {
         "id": 42,
@@ -457,13 +456,13 @@
         "id": 44,
         "count": 0,
         "delta": 0,
-        "checks": 1606
+        "checks": 2459
       },
       {
         "id": 45,
         "count": 0,
         "delta": 0,
-        "checks": 119
+        "checks": 166
       },
       {
         "id": 46,
@@ -475,7 +474,7 @@
         "id": 111,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       }
     ],
     "warnings": [
@@ -483,7 +482,7 @@
         "id": 12,
         "count": 0,
         "delta": 0,
-        "checks": 89
+        "checks": 172
       },
       {
         "id": 14,
@@ -495,115 +494,115 @@
         "id": 31,
         "count": 0,
         "delta": 0,
-        "checks": 1349
+        "checks": 2050
       },
       {
         "id": 101,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 102,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 103,
-        "count": 20,
+        "count": 24,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 105,
         "count": 0,
         "delta": 0,
-        "checks": 22
+        "checks": 35
       },
       {
         "id": 106,
-        "count": 1,
+        "count": 2,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 108,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 109,
         "count": 0,
         "delta": 0,
-        "checks": 5429
+        "checks": 7773
       },
       {
         "id": 110,
         "count": 0,
         "delta": 0,
-        "checks": 419
+        "checks": 642
       },
       {
         "id": 112,
-        "count": 42,
-        "delta": 0,
-        "checks": 42
+        "count": 59,
+        "delta": -1,
+        "checks": 59
       },
       {
         "id": 113,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 114,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 115,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 116,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 117,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 120,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 121,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 122,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 123,
-        "count": 210,
-        "delta": 0,
-        "checks": 1517
+        "count": 354,
+        "delta": 54,
+        "checks": 2286
       },
       {
         "id": 124,
@@ -633,81 +632,81 @@
         "id": 128,
         "count": 0,
         "delta": 0,
-        "checks": 153
+        "checks": 195
       },
       {
         "id": 129,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 130,
         "count": 0,
         "delta": 0,
-        "checks": 3949
+        "checks": 5536
       },
       {
         "id": 131,
         "count": 0,
         "delta": 0,
-        "checks": 3616
+        "checks": 5012
       },
       {
         "id": 132,
-        "count": 42,
-        "delta": 0,
-        "checks": 3616
+        "count": 59,
+        "delta": -1,
+        "checks": 5012
       },
       {
         "id": 133,
         "count": 0,
         "delta": 0,
-        "checks": 53
+        "checks": 66
       },
       {
         "id": 134,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 135,
-        "count": 42,
-        "delta": 0,
-        "checks": 3616
+        "count": 59,
+        "delta": -1,
+        "checks": 5012
       },
       {
         "id": 136,
         "count": 0,
         "delta": 0,
-        "checks": 1606
+        "checks": 2459
       }
     ],
     "notices": [
       {
         "id": 104,
-        "count": 6,
-        "delta": 0,
-        "checks": 22
+        "count": 7,
+        "delta": -3,
+        "checks": 35
       },
       {
         "id": 4,
-        "count": 3,
-        "delta": 0,
-        "checks": 45
+        "count": 6,
+        "delta": 1,
+        "checks": 65
       },
       {
         "id": 201,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 59
       },
       {
         "id": 202,
         "count": 0,
         "delta": 0,
-        "checks": 257
+        "checks": 409
       },
       {
         "id": 203,
@@ -723,7 +722,7 @@
       },
       {
         "id": 205,
-        "count": 1,
+        "count": 2,
         "delta": 0,
         "checks": 2
       },
@@ -735,9 +734,9 @@
       },
       {
         "id": 207,
-        "count": 128,
-        "delta": 0,
-        "checks": 153
+        "count": 171,
+        "delta": 43,
+        "checks": 195
       },
       {
         "id": 208,
@@ -755,136 +754,137 @@
         "id": 210,
         "count": 0,
         "delta": 0,
-        "checks": 84
+        "checks": 118
       },
       {
         "id": 211,
         "count": 0,
         "delta": 0,
-        "checks": 84
+        "checks": 118
       },
       {
         "id": 212,
-        "count": 0,
-        "delta": 0,
-        "checks": 53
+        "count": 1,
+        "delta": 1,
+        "checks": 66
       },
       {
         "id": 213,
-        "count": 1,
-        "delta": 0,
-        "checks": 42
+        "count": 0,
+        "delta": -1,
+        "checks": 59
       },
       {
         "id": 214,
-        "count": 92,
-        "delta": 0,
-        "checks": 5429
+        "count": 122,
+        "delta": -9,
+        "checks": 7773
       },
       {
         "id": 215,
         "count": 0,
         "delta": 0,
-        "checks": 1606
+        "checks": 2459
       },
       {
         "id": 216,
         "count": 0,
         "delta": 0,
-        "checks": 348
+        "checks": 719
       },
       {
         "id": 217,
-        "count": 15,
-        "delta": 0,
-        "checks": 348
+        "count": 38,
+        "delta": 20,
+        "checks": 719
       },
       {
         "id": 218,
         "count": 0,
         "delta": 0,
-        "checks": 172
+        "checks": 290
       }
     ],
     "topIssues": [
-      2,
-      18,
-      103,
       1,
-      9
+      2,
+      103,
+      112,
+      8
     ],
     "hidden": {},
     "fixed": {
       "1": 0,
-      "2": 5,
-      "4": 1,
-      "6": 8,
-      "7": 4,
-      "8": 85,
-      "9": 0,
-      "13": 0,
-      "18": 0,
-      "102": 2,
-      "103": 5,
-      "104": 3,
-      "105": 1,
-      "106": 17,
-      "112": 26,
-      "123": 127,
-      "125": 0,
-      "132": 0,
-      "135": 73,
-      "205": 0,
-      "207": 21,
-      "213": 14,
-      "214": 164,
-      "217": 88
-    },
-    "statusCodeGroups": {
-      "0": 1,
-      "2": 55,
-      "3": 4,
-      "4": 6,
-      "5": 1
-    },
-    "excludedChecks": [],
-    "settingsChanged": false,
-    "jsRendering": null,
-    "snapshot_id": "64d4dbcfa72b41463073bc61",
-    "snapshot_version": 15,
-    "pages_crawled": 67,
-    "pages_limit": 1000,
-    "finish_date": 1691671872358,
-    "quality": {
-      "value": 80,
-      "delta": 0
-    },
-    "user_agent_type": 7,
-    "new": {
-      "1": 1,
-      "2": 11,
+      "2": 9,
       "4": 4,
       "6": 8,
       "7": 4,
-      "8": 93,
+      "8": 92,
       "9": 1,
-      "13": 2,
+      "13": 0,
       "18": 1,
       "102": 2,
-      "103": 25,
-      "104": 9,
+      "103": 5,
+      "104": 6,
       "105": 1,
-      "106": 18,
-      "112": 68,
-      "123": 337,
-      "125": 1,
-      "132": 42,
-      "135": 115,
-      "205": 1,
-      "207": 149,
+      "106": 17,
+      "112": 44,
+      "123": 182,
+      "125": 0,
+      "132": 11,
+      "135": 175,
+      "205": 0,
+      "207": 21,
+      "212": 4,
       "213": 15,
-      "214": 256,
-      "217": 103
+      "214": 193,
+      "217": 104
+    },
+    "statusCodeGroups": {
+      "2": 75,
+      "3": 3,
+      "4": 2,
+      "5": 3
+    },
+    "excludedChecks": [],
+    "settingsChanged": true,
+    "jsRendering": null,
+    "snapshot_id": "64f5b203eff66a063180a93f",
+    "snapshot_version": 15,
+    "pages_crawled": 83,
+    "pages_limit": 10000,
+    "finish_date": 1693824318556,
+    "quality": {
+      "value": 84,
+      "delta": 1
+    },
+    "user_agent_type": 7,
+    "new": {
+      "1": 3,
+      "2": 11,
+      "4": 10,
+      "6": 8,
+      "7": 4,
+      "8": 105,
+      "9": 1,
+      "13": 4,
+      "18": 1,
+      "102": 2,
+      "103": 29,
+      "104": 13,
+      "105": 1,
+      "106": 19,
+      "112": 103,
+      "123": 536,
+      "125": 1,
+      "132": 70,
+      "135": 234,
+      "205": 2,
+      "207": 192,
+      "212": 5,
+      "213": 15,
+      "214": 315,
+      "217": 142
     }
   },
   "is_notify": false,
@@ -896,21 +896,21 @@
   },
   "xdefault": 0,
   "sitemaps": {
-    "crawledPages": 25,
-    "totalPages": 153,
+    "crawledPages": 24,
+    "totalPages": 195,
     "count": 10,
     "reprUrl": "https://rubick.ai/post-sitemap.xml",
     "status": "HAVE_HEALTHY"
   },
   "canonicalization": {
-    "emptyOrWithoutCanonicalLink": 25,
+    "emptyOrWithoutCanonicalLink": 24,
     "selfCanonical": 25,
-    "canonicalToOtherPage": 17
+    "canonicalToOtherPage": 34
   },
   "uploadUrlsCount": 0,
   "crawlSourceUrl": null,
   "precrawlError": null,
-  "is_allowed_stopping": false,
+  "is_allowed_stopping": true,
   "robots": {
     "status": 1,
     "link": "https://rubick.ai/robots.txt",

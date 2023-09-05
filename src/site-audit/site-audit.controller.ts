@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Get, Param, Post, Put, Query } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, NotFoundException, Param, Post, Put, Query } from '@nestjs/common';
 import { RunAuditDto } from './dto/create-campaign.dto';
 import { UpdateCampaignDto } from './dto/update-campaign.dto';
 import { QueryObj } from './interface';
@@ -8,7 +8,6 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 @Controller('site-audit')
 @ApiTags('Site-Audit')
 export class SiteAuditController {
-
     constructor(
         private readonly siteAuditService: SiteAuditService
     ){}
@@ -43,6 +42,7 @@ export class SiteAuditController {
     async getCompetitorAnalysis(
         @Param('projectId') projectId: string,
     ) {
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
         return await this.siteAuditService.getCompetitorAnalysis(projectId);
     }
 
@@ -51,6 +51,7 @@ export class SiteAuditController {
     async exportCompetitorAnalysis(
         @Param('projectId') projectId: string,
     ) {
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
         return await this.siteAuditService.exportCompetitorAnalysis(projectId);
     }
 
@@ -61,6 +62,7 @@ export class SiteAuditController {
         @Param('projectId') projectId: string,
         @Query('crawlSubdomains') crawlSubdomains: boolean
     ) {
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
         return await this.siteAuditService.getCampaign(projectId, crawlSubdomains);
     }
 
@@ -79,7 +81,7 @@ export class SiteAuditController {
     async getCampaignIssues(
         @Param('projectId') projectId: string,
     ) {
-        if(!projectId)  throw new BadRequestException('Invalid Project Id')
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
         return await this.siteAuditService.getIssues(projectId);
     }
 
@@ -91,6 +93,7 @@ export class SiteAuditController {
         @Param('issueId') issueId: string,
         @Query('page') page: string
     ) {
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
         return await this.siteAuditService.getIssuesDescription(projectId, issueId, parseInt(page));
     }
 
@@ -99,6 +102,7 @@ export class SiteAuditController {
     async exportIssues(
         @Param('projectId') projectId: string,
     ) {
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
         return await this.siteAuditService.exportIssues(projectId);
     }
 
@@ -107,6 +111,7 @@ export class SiteAuditController {
     async exportPages(
         @Param('projectId') projectId: string,
     ) {
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
         return await this.siteAuditService.exportPages(projectId);
     }
 
@@ -115,16 +120,17 @@ export class SiteAuditController {
     async getDashboard(
         @Param('projectId') projectId: string,
     ) {
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
         return await this.siteAuditService.getDashboard(projectId);
     }
 
-    // @Get('/fetch/campaign/:projectId/issues')
-    // async fetchCampaignIssuesDescriptions(
-    //     @Param('projectId') projectId: string,
-    // ) {
-    //     if(!projectId)  throw new BadRequestException('Invalid Project Id')
-    //     return await this.siteAuditService.fetchIssuesDescription(projectId);
-    // }
+    @Get('/fetch/campaign/:projectId/issues')
+    async fetchCampaignIssuesDescriptions(
+        @Param('projectId') projectId: string,
+    ) {
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
+        return await this.siteAuditService.fetchIssuesDescription(projectId);
+    }
 
     @Get('/campaign/:projectId/pages')
     @ApiOperation({ summary: 'Get Pages', description: 'Returns last Audits list of Pages' })
@@ -133,7 +139,7 @@ export class SiteAuditController {
         @Query('page') page: string,
         @Query('type') type: string
     ) {
-        if(!projectId)  throw new BadRequestException('Invalid Project Id')
+        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
         if(!page)  throw new BadRequestException('Page is mandatory')
         // return await this.siteAuditService.savePagesDetails(projectId, type);
         return await this.siteAuditService.getPagesDetails(projectId, parseInt(page), type);

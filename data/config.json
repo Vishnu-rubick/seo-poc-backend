@@ -1,6 +1,1 @@
-{
-  "domain": "neetcode.io",
-  "industry": "education",
-  "geography": "india",
-  "competitors": ["rubick.ai", "textmercato.com"]
-}
+{"domain":"rubick.ai","industry":"Education","geography":"India","competitors":["wittypen.io","textmercato.com"]}
