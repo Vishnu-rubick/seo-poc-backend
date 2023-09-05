@@ -214,6 +214,7 @@ export class SiteAuditService {
     }
 
     getCSV(obj: any) {
+        if(!obj || obj == "")   return "";
         const parser = new Parser();
         const csv = parser.parse(obj);
         return csv;
