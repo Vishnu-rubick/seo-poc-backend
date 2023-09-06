@@ -1,7 +1,7 @@
 import { Parser } from '@json2csv/plainjs';
 import * as csvjson from 'csvjson';
 import { HttpService } from '@nestjs/axios';
-import { ForbiddenException, Injectable, NotFoundException, StreamableFile } from '@nestjs/common';
+import { ConflictException, ForbiddenException, Injectable, NotFoundException, StreamableFile } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { catchError, map } from 'rxjs';
 import { join } from 'path';
@@ -25,6 +25,10 @@ export class SiteAuditService {
     }
 
     async runAudit(projectId: string, domain: string, pageLimit: number, crawlSubdomains: boolean) {
+        const prevCampaignData: any = await this.fetchCampaign(projectId);
+        if(prevCampaignData && prevCampaignData.status != 'FINISHED'){
+            throw new ConflictException('An audit is already running. Please wait for it to finish...')
+        }
         const editSettings = await this.updateCampaign(projectId, {
             pageLimit: pageLimit,
             crawlSubdomains: crawlSubdomains,
