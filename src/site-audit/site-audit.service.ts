@@ -27,7 +27,8 @@ export class SiteAuditService {
     async runAudit(projectId: string, domain: string, pageLimit: number, crawlSubdomains: boolean) {
         const prevCampaignData: any = await this.fetchCampaign(projectId);
         if(prevCampaignData && prevCampaignData.status != 'FINISHED'){
-            throw new ConflictException('An audit is already running. Please wait for it to finish...')
+            throw new ConflictException('An audit is already running. Please wait for it to finish...');
+            return;
         }
         const editSettings = await this.updateCampaign(projectId, {
             pageLimit: pageLimit,
@@ -38,8 +39,11 @@ export class SiteAuditService {
         })
         const runAuditResponse = await this.http.post(`${this.SEM_RUSH_BASE_URL}/reports/v1/projects/${projectId}/siteaudit/launch?key=${this.SEM_RUSH_API_KEY}`).toPromise();
         const snapshotId = runAuditResponse.data.snapshot_id;
-        const campaignData = await this.fetchCampaign(projectId);
-        return campaignData;
+        const campaignData = this.fetchCampaign(projectId);
+        return {
+            statusCode: 200,
+            message: "Audit is running"
+        };
     }
 
     async enableAudit(projectId: string) {
@@ -210,10 +214,8 @@ export class SiteAuditService {
 
     async getCompetitorAnalysis(projectId: string) {    
         let competitorData = null;
-        console.time('hola')
         let config = await this.fetchFileData(`./data/config.json`);
         if(fs.existsSync(`./data/${projectId}_2023-07-01_competitor_Analysis.json`)) competitorData = await this.fetchFileData(`./data/${projectId}_2023-07-01_competitor_Analysis.json`);
-        console.timeEnd('hola')
         return competitorData;
     }
 

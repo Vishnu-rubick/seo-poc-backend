@@ -3,11 +3,11 @@
   "name": "TM-Test-Analysis",
   "url": "textmercato.com",
   "projectDomain": "textmercato.com",
-  "status": "FINISHED",
+  "status": "RUNNING",
   "scheme": "https",
-  "errors": 128,
-  "warnings": 1663,
-  "notices": 440,
+  "errors": 147,
+  "warnings": 1977,
+  "notices": 528,
   "broken": 3,
   "brokenDelta": 0,
   "blocked": 0,
@@ -15,29 +15,28 @@
   "redirected": 4,
   "redirectedDelta": 0,
   "healthy": 5,
-  "healthyDelta": 0,
-  "haveIssues": 88,
-  "haveIssuesDelta": 0,
+  "healthyDelta": 2,
+  "haveIssues": 110,
+  "haveIssuesDelta": -292,
   "excludedBetaChecks": [],
   "defects": {
     "2": 1,
-    "6": 42,
+    "6": 52,
     "7": 7,
     "8": 3,
     "9": 2,
-    "15": 72,
-    "101": 25,
-    "102": 5,
-    "103": 46,
-    "105": 18,
-    "111": 1,
-    "112": 43,
+    "15": 82,
+    "101": 35,
+    "102": 6,
+    "103": 56,
+    "105": 30,
+    "112": 53,
     "117": 12,
-    "123": 18,
+    "123": 25,
     "125": 2,
-    "130": 1406,
-    "135": 88,
-    "202": 437,
+    "130": 1648,
+    "135": 110,
+    "202": 525,
     "205": 2,
     "213": 1
   },
@@ -45,25 +44,30 @@
     "twitterCard": 0,
     "schemaOrg": 0,
     "noMarkups": 0,
-    "hasMarkups": 88,
+    "hasMarkups": 110,
     "openGraph": 0,
-    "schemaOrgJsonld": 88,
+    "schemaOrgJsonld": 110,
     "microfomats": 0
   },
   "structuredData": {
     "groupByPages": {
       "noItems": 0,
-      "valid": 88,
+      "valid": 110,
       "invalid": 0
     },
     "groupByItems": {
-      "valid": 102,
+      "valid": 136,
       "invalid": 0
     },
     "items": [
       {
-        "type": "LOGO",
-        "valid": 1,
+        "type": "ARTICLE",
+        "valid": 24,
+        "invalid": 0
+      },
+      {
+        "type": "SITELINKS_SEARCH_BOX",
+        "valid": 110,
         "invalid": 0
       },
       {
@@ -72,13 +76,8 @@
         "invalid": 0
       },
       {
-        "type": "SITELINKS_SEARCH_BOX",
-        "valid": 88,
-        "invalid": 0
-      },
-      {
-        "type": "ARTICLE",
-        "valid": 12,
+        "type": "LOGO",
+        "valid": 1,
         "invalid": 0
       }
     ]
@@ -86,16 +85,17 @@
   "depths": {
     "0": 21,
     "1": 21,
-    "2": 58
+    "2": 61,
+    "3": 19
   },
   "crawlSubdomains": false,
   "respectCrawlDelay": false,
   "crawlAmpFirst": "UNCHECKED",
   "internalIncomingLinksGroups": {
     "1": 1,
-    "2": 25,
-    "6": 3,
-    "7": 32,
+    "2": 29,
+    "6": 17,
+    "7": 36,
     "8": 27
   },
   "internalIncomingLinksGroupsList": [
@@ -115,19 +115,19 @@
       "id": 2,
       "leftBorder": 2,
       "rightBorder": 5,
-      "count": 25
+      "count": 29
     },
     {
       "id": 6,
       "leftBorder": 6,
       "rightBorder": 15,
-      "count": 3
+      "count": 17
     },
     {
       "id": 7,
       "leftBorder": 16,
       "rightBorder": 50,
-      "count": 32
+      "count": 36
     },
     {
       "id": 8,
@@ -148,12 +148,12 @@
       "count": 0
     }
   ],
-  "canonical": 88,
+  "canonical": 110,
   "withAmp": 0,
   "scheduleDay": 0,
   "crawlability": {
     "budget": {
-      "total": 13,
+      "total": 12,
       "stats": {
         "nonCanonicalPages": 0,
         "permanentRedirects": 4,
@@ -161,7 +161,7 @@
         "temporaryRedirects": 0,
         "contentDuplicates": 7,
         "tooLargePages": 0,
-        "tooSlowPages": 1,
+        "tooSlowPages": 0,
         "botBlocked": 0,
         "code4xx": 1,
         "code5xx": 0
@@ -175,23 +175,23 @@
   "isPaid": true,
   "crawlDelaySettingTypeId": 1,
   "ignoreRobotsDisallow": false,
-  "campaignsCount": 15,
-  "projectsCount": 16,
+  "campaignsCount": 24,
+  "projectsCount": 26,
   "jsRendering": null,
   "jsImpactReportDataAvailable": false,
   "user_agent_type": 7,
-  "last_audit": 1690282386758,
+  "last_audit": 1693986633957,
   "last_failed_audit": 0,
   "next_audit": -1,
-  "running_pages_crawled": 100,
-  "running_pages_limit": 100,
-  "pages_crawled": 100,
-  "pages_crawled_delta": 0,
-  "pages_limit": 100,
-  "total_checks": 85642,
-  "errors_delta": 1,
-  "warnings_delta": 1,
-  "notices_delta": -1,
+  "running_pages_crawled": 336,
+  "running_pages_limit": 5990,
+  "pages_crawled": 122,
+  "pages_crawled_delta": -290,
+  "pages_limit": 5990,
+  "total_checks": 110972,
+  "errors_delta": -195,
+  "warnings_delta": -3898,
+  "notices_delta": -1454,
   "mask_allow": [],
   "mask_disallow": [],
   "removedParameters": [],
@@ -208,16 +208,16 @@
         "delta": 0
       },
       "crawlability": {
-        "value": 90,
-        "delta": -4
+        "value": 94,
+        "delta": 0
       },
       "performance": {
-        "value": 92,
-        "delta": -4
+        "value": 96,
+        "delta": 1
       },
       "linking": {
         "value": 93,
-        "delta": 0
+        "delta": 8
       },
       "markups": {
         "value": 100,
@@ -229,49 +229,49 @@
         "id": 1,
         "count": 0,
         "delta": 0,
-        "checks": 98
+        "checks": 120
       },
       {
         "id": 2,
         "count": 1,
         "delta": 0,
-        "checks": 98
+        "checks": 120
       },
       {
         "id": 3,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 6,
-        "count": 42,
-        "delta": -1,
-        "checks": 8184
+        "count": 52,
+        "delta": -8,
+        "checks": 12650
       },
       {
         "id": 7,
         "count": 7,
-        "delta": 2,
-        "checks": 2576
+        "delta": -1,
+        "checks": 3416
       },
       {
         "id": 8,
         "count": 3,
         "delta": 0,
-        "checks": 3523
+        "checks": 4356
       },
       {
         "id": 9,
         "count": 2,
         "delta": 0,
-        "checks": 98
+        "checks": 120
       },
       {
         "id": 10,
         "count": 0,
         "delta": 0,
-        "checks": 98
+        "checks": 120
       },
       {
         "id": 11,
@@ -283,13 +283,13 @@
         "id": 13,
         "count": 0,
         "delta": 0,
-        "checks": 1940
+        "checks": 2256
       },
       {
         "id": 15,
-        "count": 72,
-        "delta": -1,
-        "checks": 8190
+        "count": 82,
+        "delta": -186,
+        "checks": 12656
       },
       {
         "id": 16,
@@ -307,7 +307,7 @@
         "id": 18,
         "count": 0,
         "delta": 0,
-        "checks": 35
+        "checks": 45
       },
       {
         "id": 19,
@@ -325,7 +325,7 @@
         "id": 21,
         "count": 0,
         "delta": 0,
-        "checks": 91
+        "checks": 113
       },
       {
         "id": 22,
@@ -379,7 +379,7 @@
         "id": 30,
         "count": 0,
         "delta": 0,
-        "checks": 2386
+        "checks": 2908
       },
       {
         "id": 32,
@@ -391,7 +391,7 @@
         "id": 33,
         "count": 0,
         "delta": 0,
-        "checks": 5632
+        "checks": 6921
       },
       {
         "id": 34,
@@ -415,25 +415,25 @@
         "id": 38,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 39,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 40,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 41,
         "count": 0,
         "delta": 0,
-        "checks": 1139
+        "checks": 1425
       },
       {
         "id": 42,
@@ -451,13 +451,13 @@
         "id": 44,
         "count": 0,
         "delta": 0,
-        "checks": 3986
+        "checks": 4943
       },
       {
         "id": 45,
         "count": 0,
         "delta": 0,
-        "checks": 102
+        "checks": 136
       },
       {
         "id": 46,
@@ -467,9 +467,9 @@
       },
       {
         "id": 111,
-        "count": 1,
-        "delta": 1,
-        "checks": 88
+        "count": 0,
+        "delta": 0,
+        "checks": 110
       }
     ],
     "warnings": [
@@ -477,7 +477,7 @@
         "id": 12,
         "count": 0,
         "delta": 0,
-        "checks": 12
+        "checks": 24
       },
       {
         "id": 14,
@@ -489,115 +489,115 @@
         "id": 31,
         "count": 0,
         "delta": 0,
-        "checks": 3513
+        "checks": 4346
       },
       {
         "id": 101,
-        "count": 25,
-        "delta": -1,
-        "checks": 88
+        "count": 35,
+        "delta": -6,
+        "checks": 110
       },
       {
         "id": 102,
-        "count": 5,
-        "delta": 0,
-        "checks": 88
+        "count": 6,
+        "delta": -6,
+        "checks": 110
       },
       {
         "id": 103,
-        "count": 46,
-        "delta": -1,
-        "checks": 88
+        "count": 56,
+        "delta": -6,
+        "checks": 110
       },
       {
         "id": 105,
-        "count": 18,
-        "delta": 1,
-        "checks": 42
+        "count": 30,
+        "delta": -280,
+        "checks": 54
       },
       {
         "id": 106,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 108,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 109,
         "count": 0,
         "delta": 0,
-        "checks": 5632
+        "checks": 6921
       },
       {
         "id": 110,
         "count": 0,
         "delta": 0,
-        "checks": 970
+        "checks": 1128
       },
       {
         "id": 112,
-        "count": 43,
-        "delta": -1,
-        "checks": 88
+        "count": 53,
+        "delta": -9,
+        "checks": 110
       },
       {
         "id": 113,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 114,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 115,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 116,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 117,
         "count": 12,
-        "delta": 2,
-        "checks": 88
+        "delta": 0,
+        "checks": 110
       },
       {
         "id": 120,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 121,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 122,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 123,
-        "count": 18,
-        "delta": 4,
-        "checks": 3529
+        "count": 25,
+        "delta": -111,
+        "checks": 4369
       },
       {
         "id": 124,
@@ -633,49 +633,49 @@
         "id": 129,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 130,
-        "count": 1406,
-        "delta": -3,
-        "checks": 2109
+        "count": 1648,
+        "delta": -3190,
+        "checks": 2553
       },
       {
         "id": 131,
         "count": 0,
         "delta": 0,
-        "checks": 264
+        "checks": 330
       },
       {
         "id": 132,
         "count": 0,
         "delta": 0,
-        "checks": 264
+        "checks": 330
       },
       {
         "id": 133,
         "count": 0,
         "delta": 0,
-        "checks": 91
+        "checks": 113
       },
       {
         "id": 134,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 135,
-        "count": 88,
-        "delta": 0,
-        "checks": 264
+        "count": 110,
+        "delta": -290,
+        "checks": 330
       },
       {
         "id": 136,
         "count": 0,
         "delta": 0,
-        "checks": 3986
+        "checks": 4943
       }
     ],
     "notices": [
@@ -683,25 +683,25 @@
         "id": 104,
         "count": 0,
         "delta": 0,
-        "checks": 42
+        "checks": 54
       },
       {
         "id": 4,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 201,
         "count": 0,
         "delta": 0,
-        "checks": 88
+        "checks": 110
       },
       {
         "id": 202,
-        "count": 437,
-        "delta": 0,
-        "checks": 473
+        "count": 525,
+        "delta": -1196,
+        "checks": 597
       },
       {
         "id": 203,
@@ -730,7 +730,7 @@
       {
         "id": 207,
         "count": 0,
-        "delta": 0,
+        "delta": -7,
         "checks": 0
       },
       {
@@ -760,44 +760,44 @@
       {
         "id": 212,
         "count": 0,
-        "delta": 0,
-        "checks": 91
+        "delta": -5,
+        "checks": 113
       },
       {
         "id": 213,
         "count": 1,
-        "delta": -1,
-        "checks": 88
+        "delta": -246,
+        "checks": 110
       },
       {
         "id": 214,
         "count": 0,
         "delta": 0,
-        "checks": 5632
+        "checks": 6921
       },
       {
         "id": 215,
         "count": 0,
         "delta": 0,
-        "checks": 3986
+        "checks": 4943
       },
       {
         "id": 216,
         "count": 0,
         "delta": 0,
-        "checks": 8506
+        "checks": 10571
       },
       {
         "id": 217,
         "count": 0,
         "delta": 0,
-        "checks": 5846
+        "checks": 7273
       },
       {
         "id": 218,
         "count": 0,
         "delta": 0,
-        "checks": 12
+        "checks": 24
       }
     ],
     "topIssues": [
@@ -805,75 +805,80 @@
       7,
       15,
       103,
-      9
+      101
     ],
     "hidden": {
       "15": 1
     },
     "fixed": {
       "2": 0,
-      "6": 43,
-      "7": 0,
+      "6": 705,
+      "7": 9,
       "8": 0,
       "9": 0,
-      "15": 4,
-      "101": 4,
-      "102": 0,
-      "103": 4,
-      "105": 0,
-      "112": 4,
-      "117": 0,
-      "123": 0,
+      "15": 1381,
+      "101": 44,
+      "102": 23,
+      "103": 44,
+      "105": 1072,
+      "111": 3,
+      "112": 56,
+      "117": 1,
+      "123": 384,
       "125": 0,
-      "130": 44,
-      "135": 4,
-      "202": 16,
+      "130": 12428,
+      "135": 1130,
+      "202": 4641,
       "205": 0,
-      "213": 1
+      "207": 28,
+      "212": 20,
+      "213": 949
     },
     "statusCodeGroups": {
       "0": 2,
-      "2": 93,
+      "2": 115,
       "3": 4,
       "4": 1
     },
     "excludedChecks": [],
-    "settingsChanged": false,
+    "settingsChanged": true,
     "jsRendering": null,
-    "snapshot_id": "64bfa7e0eb316b200d6f6e9e",
+    "snapshot_id": "64f82da3caf78e11b0d4c2c9",
     "snapshot_version": 15,
-    "pages_crawled": 100,
-    "pages_limit": 100,
-    "finish_date": 1690282386758,
+    "pages_crawled": 122,
+    "pages_limit": 122,
+    "finish_date": 1693986633957,
     "quality": {
-      "value": 72,
+      "value": 73,
       "delta": -2
     },
     "user_agent_type": 7,
     "new": {
       "2": 1,
-      "6": 85,
-      "7": 7,
+      "6": 757,
+      "7": 16,
       "8": 3,
       "9": 2,
-      "15": 77,
-      "101": 29,
-      "102": 5,
-      "103": 50,
-      "105": 18,
-      "111": 1,
-      "112": 47,
-      "117": 12,
-      "123": 18,
+      "15": 1464,
+      "101": 79,
+      "102": 29,
+      "103": 100,
+      "105": 1102,
+      "111": 3,
+      "112": 109,
+      "117": 13,
+      "123": 409,
       "125": 2,
-      "130": 1450,
-      "135": 92,
-      "202": 453,
+      "130": 14076,
+      "135": 1240,
+      "202": 5166,
       "205": 2,
-      "213": 2
+      "207": 28,
+      "212": 20,
+      "213": 950
     }
   },
-  "is_notify": true,
+  "is_notify": false,
   "ampTotal": 0,
   "hreflangs": {
     "totalPages": 0,
@@ -882,7 +887,7 @@
   },
   "xdefault": 0,
   "sitemaps": {
-    "crawledPages": 35,
+    "crawledPages": 45,
     "totalPages": 58,
     "count": 6,
     "reprUrl": "https://www.textmercato.com/faqs/sitemap.xml",
@@ -890,13 +895,13 @@
   },
   "canonicalization": {
     "emptyOrWithoutCanonicalLink": 12,
-    "selfCanonical": 88,
+    "selfCanonical": 110,
     "canonicalToOtherPage": 0
   },
   "uploadUrlsCount": 0,
   "crawlSourceUrl": null,
   "precrawlError": null,
-  "is_allowed_stopping": false,
+  "is_allowed_stopping": true,
   "robots": {
     "status": 1,
     "link": "https://textmercato.com/robots.txt",
