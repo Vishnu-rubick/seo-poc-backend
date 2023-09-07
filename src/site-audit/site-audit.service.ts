@@ -27,8 +27,10 @@ export class SiteAuditService {
     async runAudit(projectId: string, domain: string, pageLimit: number, crawlSubdomains: boolean) {
         const prevCampaignData: any = await this.fetchCampaign(projectId);
         if(prevCampaignData && prevCampaignData.status != 'FINISHED'){
-            throw new ConflictException('An audit is already running. Please wait for it to finish...');
-            return;
+            return {
+                statusCode: 409,
+                message: "An audit is already running. Please wait for it to finish..."
+            };
         }
         const editSettings = await this.updateCampaign(projectId, {
             pageLimit: pageLimit,
@@ -238,6 +240,12 @@ export class SiteAuditService {
 
         for(const issueId in issuesData){
             const issueObj = issueCategoryData.find((iss) => iss.id == issueId)
+
+            if(issueObj.category == 'crawl')    issueObj.category = 'Crawlability'
+            else if(issueObj.category == 'broken')    issueObj.category = 'Broken Links'
+            else if(issueObj.category == 'markup')    issueObj.category = 'Text/Image'
+            else if(issueObj.category == 'tech')    issueObj.category = 'HTML, HREFLANG & HTML'
+
             let priority = 'P4';
 
             if(campaignData.current_snapshot.errors.find((iss) => (iss.id == issueId))) priority = 'P0';
@@ -296,7 +304,7 @@ export class SiteAuditService {
         // const getCampaign = await this.getCampaign(projectId);
         // const domainList = [getCampaign.projectDomain, 'peppercontent.io', 'wittypen.com'];
 
-        // let data = await this.fetchCompetitorAnalysis(projectId, domainList);
+        // let data = await this.       (projectId, domainList);
 
         return {
             mssg: "Testing 😄",
