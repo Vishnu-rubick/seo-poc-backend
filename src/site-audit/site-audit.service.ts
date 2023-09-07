@@ -204,7 +204,8 @@ export class SiteAuditService {
         if(!issuesData) throw new NotFoundException('Unable to Get Issues Descriptions');
 
         let result = []
-        let low = page*10, high = Math.min(issuesData.length, low + 10);
+        // let low = page*10, high = Math.min(issuesData.length, low + 10);
+        let low = page*10, high = issuesData.length;
 
         for(let idx = low; idx < high; ++idx){
             result.push(issuesData[idx])
