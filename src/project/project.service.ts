@@ -134,7 +134,7 @@ export class ProjectService {
                 // 'Organic Keywords': 'Coming Soon',
                 'Paid Search Traffic': domainObj?.search_paid || 0,
                 'Visitors': domainObj?.visits || 0,
-                'Unique Visitors': 'NA',
+                'Unique Visitors': domainObj?.users || 0,
                 'Avg. Visit Duration': domainObj?.time_on_site || 0,
                 'Bounce Rate': domainObj?.bounce_rate || 0,
                 'Traffic Share': ((domainObj?.visits/totalVisits) * 100) || 100,
