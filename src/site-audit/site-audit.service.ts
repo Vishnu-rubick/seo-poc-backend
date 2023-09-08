@@ -41,10 +41,11 @@ export class SiteAuditService {
         })
         const runAuditResponse = await this.http.post(`${this.SEM_RUSH_BASE_URL}/reports/v1/projects/${projectId}/siteaudit/launch?key=${this.SEM_RUSH_API_KEY}`).toPromise();
         const snapshotId = runAuditResponse.data.snapshot_id;
-        const campaignData = this.fetchCampaign(projectId);
+        const campaignData = await this.fetchCampaign(projectId);
         return {
             statusCode: 200,
-            message: "Audit is running"
+            message: "Audit is running",
+            data: campaignData
         };
     }
 
