@@ -9,6 +9,7 @@ import { ObjectStorageClass } from '@aws-sdk/client-s3';
 import { HttpService } from '@nestjs/axios';
 import { S3Service } from 'src/utils/s3.service';
 import { ConfigService } from '@nestjs/config';
+import { CommonService } from 'src/utils/common.service';
 
 @Injectable()
 export class ProjectService {
@@ -20,6 +21,7 @@ export class ProjectService {
         private http: HttpService,
         private s3Service: S3Service,
         private configService: ConfigService,
+        private commonService: CommonService
     ) {
         this.SEM_RUSH_API_KEY = configService.get('SEM_RUSH_API_KEY');
         this.SEM_RUSH_BASE_URL = configService.get('SEM_RUSH_BASE_URL');
@@ -37,7 +39,7 @@ export class ProjectService {
     }
 
     async setup(domain: string, pageLimit: number, crawlSubdomains: boolean = false) {
-        const projects: any = await this.fetchFileData(`./data/projects_data.json`)
+        const projects: any = await this.commonService.fetchFileData(`./data/projects_data.json`)
 
         if(projects.hasOwnProperty(domain)){
             throw new ConflictException(`Project with ${domain} already exists`);
@@ -56,39 +58,28 @@ export class ProjectService {
             projectId: project.data.project_id
         }
 
-        await this.saveFile(`./data/projects_data.json`, JSON.stringify(projects))
+        await this.commonService.saveFile(`./data/projects_data.json`, JSON.stringify(projects))
 
         return project;
     }
 
-    async getConfig() {
-        const config: any = await this.fetchFileData(`./data/config.json`);
-        if(!config || Object.keys(config).length == 0) throw new NotFoundException('No config data found');
-
-        let projectId = null;
-
-        const projects = await this.fetchFileData(`./data/projects_data.json`);
-        if(projects.hasOwnProperty(config?.domain)){
-            projectId = projects[config?.domain].projectId;
-        }
-
-        return {
-            ...config,
-            projectId: projectId
-        }
-    }
+    
 
     async saveConfig(configDto: ConfigDto) {
-        await this.saveFile(`./data/config.json`, JSON.stringify(configDto));
+        await this.commonService.saveFile(`./data/config.json`, JSON.stringify(configDto));
 
-        let conf: any = await this.getConfig();
+        let conf: any = await this.commonService.getConfig();
         if(!conf?.projectId){
             await this.setup(conf.domain, 400);
-            conf = await this.getConfig();
+            conf = await this.commonService.getConfig();
         }
         
         await this.fetchCompetitorAnalysis(conf.projectId, [conf.domain, ...conf.competitors]);
         return conf;
+    }
+
+    async getConfig(){
+        return await this.commonService.getConfig();
     }
     
     async fetchCompetitorAnalysis(projectId: string, targetDomainsList: string[]) {
@@ -143,16 +134,16 @@ export class ProjectService {
 
         const display_date = jsonData[0].display_date;
         // save in mongo
-        // await this.saveFile(`./data/${projectId}_${display_date}_competitor_Analysis.json`, JSON.stringify(formattedJson));
-        await this.saveFile(`./data/${projectId}_2023-07-01_competitor_Analysis.json`, JSON.stringify(formattedJson));
+        // await this.commonService.saveFile(`./data/${projectId}_${display_date}_competitor_Analysis.json`, JSON.stringify(formattedJson));
+        await this.commonService.saveFile(`./data/${projectId}_2023-07-01_competitor_Analysis.json`, JSON.stringify(formattedJson));
 
         // save in s3
-        const csvData = this.getCSV(formattedJson);
+        const csvData = this.commonService.getCSV(formattedJson);
         // const path = `projects/serp/${projectId}/site-audit/${display_date}_competitor_Analysis.csv`;
         const path = `projects/serp/${projectId}/site-audit/2023-07-01_competitor_Analysis.csv`;
 
-        // await this.saveFile(`./data/${projectId}_${display_date}_competitor_Analysis.csv`, csvData);
-        await this.saveFile(`./data/${projectId}_2023-07-01_competitor_Analysis.csv`, csvData);
+        // await this.commonService.saveFile(`./data/${projectId}_${display_date}_competitor_Analysis.csv`, csvData);
+        await this.commonService.saveFile(`./data/${projectId}_2023-07-01_competitor_Analysis.csv`, csvData);
         const res = await this.s3Service.s3_upload(
             csvData,
             process.env.AWS_BUCKET_NAME, 
@@ -160,24 +151,5 @@ export class ProjectService {
         );
         
         return formattedJson;
-    }
-
-    async fetchFileData(filePath: string){
-        let content = '';
-        if(fs.existsSync(filePath))    content = fs.readFileSync(filePath, 'utf-8');
-        if(!content || !content.length) return null;
-        let data = JSON.parse(content);
-
-        return data;
-    }
-
-    async saveFile(filePath: string, obj: string){
-        fs.writeFileSync(filePath, obj, 'utf-8');
-    }
-
-    getCSV(obj: any) {
-        const parser = new Parser();
-        const csv = parser.parse(obj);
-        return csv;
     }
 }

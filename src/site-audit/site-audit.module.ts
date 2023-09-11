@@ -8,6 +8,7 @@ import { SiteAuditService } from './site-audit.service';
 
 import * as dotenv from 'dotenv';
 import { S3Service } from 'src/utils/s3.service';
+import { CommonService } from 'src/utils/common.service';
 dotenv.config();
 
 
@@ -20,7 +21,7 @@ dotenv.config();
     HttpModule,
   ],
   controllers: [SiteAuditController],
-  providers: [SiteAuditService, SiteAuditRepository, S3Service],
+  providers: [SiteAuditService, SiteAuditRepository, S3Service, CommonService],
   exports: [SiteAuditService, SiteAuditRepository]
 })
 export class SiteAuditModule {}

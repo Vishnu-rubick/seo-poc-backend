@@ -4,11 +4,12 @@ import { ProjectController } from './project.controller';
 import { ProjectRepository } from './project.repository';
 import { HttpModule } from '@nestjs/axios';
 import { S3Service } from 'src/utils/s3.service';
+import { CommonService } from 'src/utils/common.service';
 
 @Module({
     imports: [HttpModule],
     controllers: [ProjectController],
-    providers: [ProjectService, ProjectRepository, S3Service],
+    providers: [ProjectService, ProjectRepository, S3Service, CommonService],
     exports: [ProjectService, ProjectRepository]
 })
 export class ProjectModule {}

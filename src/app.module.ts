@@ -10,6 +10,8 @@ import { ProjectController } from './project/project.controller';
 import { ProjectService } from './project/project.service';
 import { ProjectModule } from './project/project.module';
 import { S3Service } from './utils/s3.service';
+import { KeywordsModule } from './keywords/keywords.module';
+import { CommonService } from './utils/common.service';
 
 dotenv.config();
 
@@ -22,8 +24,9 @@ dotenv.config();
     HttpModule,
     SiteAuditModule,
     ProjectModule,
+    KeywordsModule,
   ],
   controllers: [AppController, ProjectController],
-  providers: [AppService, SiteAuditService, ProjectService, S3Service],
+  providers: [AppService, SiteAuditService, ProjectService, S3Service, CommonService],
 })
 export class AppModule {}

@@ -1,5 +1,4 @@
 import { Parser } from '@json2csv/plainjs';
-import * as csvjson from 'csvjson';
 import { HttpService } from '@nestjs/axios';
 import { ConflictException, ForbiddenException, Injectable, NotFoundException, StreamableFile } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
