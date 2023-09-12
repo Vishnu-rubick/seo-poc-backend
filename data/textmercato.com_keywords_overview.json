@@ -1,0 +1,38 @@
+{
+  "createdAt": "2023-09-11T11:12:17.987Z",
+  "domain": "textmercato.com",
+  "data": [
+    {
+      "Domain": "textmercato.com",
+      "Rank": "10628007",
+      "Organic Keywords": "134",
+      "Organic Traffic": "2",
+      "Organic Cost": "0",
+      "Adwords Keywords": "0",
+      "Adwords Traffic": "0",
+      "Adwords Cost": "0",
+      "Intent Unknown Positions": "0",
+      "Intent Commercial Positions": "23",
+      "Intent Informational Positions": "116",
+      "Intent Navigational Positions": "7",
+      "Intent Transactional Positions": "6",
+      "Intent Unknown Traffic": "0",
+      "Intent Commercial Traffic": "0",
+      "Intent Informational Traffic": "2",
+      "Intent Navigational Traffic": "0",
+      "Intent Transactional Traffic": "0",
+      "Intent Unknown Traffic Cost": "0",
+      "Intent Commercial Traffic Cost": "0",
+      "Intent Informational Traffic Cost": "0",
+      "Intent Navigational Traffic Cost": "0",
+      "Intent Transactional Traffic Cost": "0",
+      "SERP Features Positions": "0",
+      "SERP Features Positions Branded": "0",
+      "SERP Features Traffic": "0",
+      "SERP Features Traffic Branded": "0",
+      "SERP Features Traffic Cost": "0",
+      "SERP Features Positions New": "0",
+      "SERP Features Positions Lost": "0"
+    }
+  ]
+}

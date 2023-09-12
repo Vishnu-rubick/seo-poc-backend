@@ -5,61 +5,77 @@
   "projectDomain": "rubick.ai",
   "status": "FINISHED",
   "scheme": "https",
-  "errors": 9,
-  "warnings": 567,
-  "notices": 359,
+  "errors": 19,
+  "warnings": 677,
+  "notices": 418,
   "broken": 3,
-  "brokenDelta": -2,
-  "blocked": 7,
-  "blockedDelta": 1,
+  "brokenDelta": 0,
+  "blocked": 6,
+  "blockedDelta": 4,
   "redirected": 4,
   "redirectedDelta": 1,
   "healthy": 3,
-  "healthyDelta": 0,
-  "haveIssues": 67,
-  "haveIssuesDelta": 1,
+  "healthyDelta": -1,
+  "haveIssues": 69,
+  "haveIssuesDelta": 18,
   "excludedBetaChecks": [],
   "defects": {
     "1": 1,
     "2": 2,
-    "4": 7,
-    "8": 2,
+    "4": 6,
+    "8": 5,
     "13": 4,
+    "18": 7,
+    "102": 12,
     "103": 24,
-    "104": 7,
-    "106": 2,
-    "112": 60,
-    "123": 360,
+    "104": 4,
+    "106": 20,
+    "112": 62,
+    "123": 434,
     "125": 1,
-    "132": 60,
-    "135": 60,
+    "132": 62,
+    "135": 62,
     "205": 2,
-    "207": 170,
-    "212": 3,
-    "213": 1,
-    "214": 131,
-    "217": 38
+    "207": 219,
+    "213": 2,
+    "214": 135,
+    "217": 50
   },
   "markups": {
-    "twitterCard": 67,
+    "twitterCard": 68,
     "schemaOrg": 0,
     "noMarkups": 0,
-    "hasMarkups": 67,
-    "openGraph": 67,
-    "schemaOrgJsonld": 67,
+    "hasMarkups": 68,
+    "openGraph": 68,
+    "schemaOrgJsonld": 68,
     "microfomats": 0
   },
   "structuredData": {
     "groupByPages": {
       "noItems": 0,
-      "valid": 67,
+      "valid": 68,
       "invalid": 0
     },
     "groupByItems": {
-      "valid": 183,
+      "valid": 186,
       "invalid": 0
     },
     "items": [
+      {
+        "type": "SITELINKS_SEARCH_BOX",
+        "valid": 68,
+        "invalid": 0
+      },
+      {
+        "type": "SITE_NAMES",
+        "valid": 4,
+        "invalid": 0
+      },
+      {
+        "type": "ARTICLE",
+        "valid": 21,
+        "invalid": 0
+      },
       {
         "type": "FAQ",
         "valid": 25,
@@ -67,41 +83,25 @@
       },
       {
         "type": "BREADCRUMB",
-        "valid": 67,
-        "invalid": 0
-      },
-      {
-        "type": "ARTICLE",
-        "valid": 20,
-        "invalid": 0
-      },
-      {
-        "type": "SITELINKS_SEARCH_BOX",
-        "valid": 67,
-        "invalid": 0
-      },
-      {
-        "type": "SITE_NAMES",
-        "valid": 4,
+        "valid": 68,
         "invalid": 0
       }
     ]
   },
   "depths": {
     "0": 22,
-    "1": 41,
-    "2": 12,
-    "3": 5,
-    "4": 4
+    "1": 42,
+    "2": 16,
+    "3": 5
   },
   "crawlSubdomains": false,
   "respectCrawlDelay": false,
   "crawlAmpFirst": "UNCHECKED",
   "internalIncomingLinksGroups": {
     "0": 3,
-    "1": 1,
-    "2": 11,
-    "6": 14,
+    "1": 3,
+    "2": 13,
+    "6": 11,
     "7": 16,
     "8": 22
   },
@@ -116,19 +116,19 @@
       "id": 1,
       "leftBorder": 1,
       "rightBorder": 1,
-      "count": 1
+      "count": 3
     },
     {
       "id": 2,
       "leftBorder": 2,
       "rightBorder": 5,
-      "count": 11
+      "count": 13
     },
     {
       "id": 6,
       "leftBorder": 6,
       "rightBorder": 15,
-      "count": 14
+      "count": 11
     },
     {
       "id": 7,
@@ -155,21 +155,21 @@
       "count": 0
     }
   ],
-  "canonical": 60,
+  "canonical": 62,
   "withAmp": 0,
   "scheduleDay": 0,
   "crawlability": {
     "budget": {
       "total": 48,
       "stats": {
-        "nonCanonicalPages": 34,
+        "nonCanonicalPages": 35,
         "permanentRedirects": 4,
         "redirectChainsAndLoops": 0,
         "temporaryRedirects": 0,
         "contentDuplicates": 0,
         "tooLargePages": 0,
         "tooSlowPages": 0,
-        "botBlocked": 7,
+        "botBlocked": 6,
         "code4xx": 2,
         "code5xx": 1
       }
@@ -182,23 +182,23 @@
   "isPaid": true,
   "crawlDelaySettingTypeId": 1,
   "ignoreRobotsDisallow": false,
-  "campaignsCount": 22,
-  "projectsCount": 24,
+  "campaignsCount": 24,
+  "projectsCount": 26,
   "jsRendering": null,
   "jsImpactReportDataAvailable": false,
   "user_agent_type": 7,
-  "last_audit": 1693834253492,
+  "last_audit": 1694156084061,
   "last_failed_audit": 0,
   "next_audit": -1,
-  "running_pages_crawled": 84,
-  "running_pages_limit": 1000,
-  "pages_crawled": 84,
-  "pages_crawled_delta": 1,
-  "pages_limit": 1000,
-  "total_checks": 79337,
-  "errors_delta": -13,
-  "warnings_delta": 9,
-  "notices_delta": 12,
+  "running_pages_crawled": 85,
+  "running_pages_limit": 8056,
+  "pages_crawled": 85,
+  "pages_crawled_delta": 22,
+  "pages_limit": 8056,
+  "total_checks": 82412,
+  "errors_delta": 4,
+  "warnings_delta": 147,
+  "notices_delta": 266,
   "mask_allow": [],
   "mask_disallow": [],
   "removedParameters": [],
@@ -223,8 +223,8 @@
         "delta": 0
       },
       "linking": {
-        "value": 84,
-        "delta": -3
+        "value": 85,
+        "delta": -4
       },
       "markups": {
         "value": 100,
@@ -235,26 +235,26 @@
       {
         "id": 1,
         "count": 1,
-        "delta": -2,
-        "checks": 84
+        "delta": 0,
+        "checks": 85
       },
       {
         "id": 2,
         "count": 2,
         "delta": 0,
-        "checks": 84
+        "checks": 85
       },
       {
         "id": 3,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 6,
         "count": 0,
         "delta": 0,
-        "checks": 898
+        "checks": 960
       },
       {
         "id": 7,
@@ -264,21 +264,21 @@
       },
       {
         "id": 8,
-        "count": 2,
-        "delta": -11,
-        "checks": 1996
+        "count": 5,
+        "delta": 0,
+        "checks": 2060
       },
       {
         "id": 9,
         "count": 0,
         "delta": 0,
-        "checks": 84
+        "checks": 85
       },
       {
         "id": 10,
         "count": 0,
         "delta": 0,
-        "checks": 84
+        "checks": 85
       },
       {
         "id": 11,
@@ -290,13 +290,13 @@
         "id": 13,
         "count": 4,
         "delta": 0,
-        "checks": 1298
+        "checks": 1336
       },
       {
         "id": 15,
         "count": 0,
         "delta": 0,
-        "checks": 928
+        "checks": 990
       },
       {
         "id": 16,
@@ -312,9 +312,9 @@
       },
       {
         "id": 18,
-        "count": 0,
-        "delta": 0,
-        "checks": 25
+        "count": 7,
+        "delta": 4,
+        "checks": 26
       },
       {
         "id": 19,
@@ -332,7 +332,7 @@
         "id": 21,
         "count": 0,
         "delta": 0,
-        "checks": 73
+        "checks": 74
       },
       {
         "id": 22,
@@ -386,7 +386,7 @@
         "id": 30,
         "count": 0,
         "delta": 0,
-        "checks": 6805
+        "checks": 7009
       },
       {
         "id": 32,
@@ -398,7 +398,7 @@
         "id": 33,
         "count": 0,
         "delta": 0,
-        "checks": 7897
+        "checks": 8157
       },
       {
         "id": 34,
@@ -422,25 +422,25 @@
         "id": 38,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 39,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 40,
         "count": 0,
         "delta": 0,
-        "checks": 67
+        "checks": 68
       },
       {
         "id": 41,
         "count": 0,
         "delta": 0,
-        "checks": 4978
+        "checks": 5135
       },
       {
         "id": 42,
@@ -458,13 +458,13 @@
         "id": 44,
         "count": 0,
         "delta": 0,
-        "checks": 2496
+        "checks": 2649
       },
       {
         "id": 45,
         "count": 0,
         "delta": 0,
-        "checks": 169
+        "checks": 174
       },
       {
         "id": 46,
@@ -476,7 +476,7 @@
         "id": 111,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       }
     ],
     "warnings": [
@@ -484,7 +484,7 @@
         "id": 12,
         "count": 0,
         "delta": 0,
-        "checks": 174
+        "checks": 190
       },
       {
         "id": 14,
@@ -496,115 +496,115 @@
         "id": 31,
         "count": 0,
         "delta": 0,
-        "checks": 2081
+        "checks": 2210
       },
       {
         "id": 101,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 102,
-        "count": 0,
-        "delta": 0,
-        "checks": 60
+        "count": 12,
+        "delta": 7,
+        "checks": 62
       },
       {
         "id": 103,
         "count": 24,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 105,
         "count": 0,
         "delta": 0,
-        "checks": 36
+        "checks": 38
       },
       {
         "id": 106,
-        "count": 2,
-        "delta": 0,
-        "checks": 60
+        "count": 20,
+        "delta": 10,
+        "checks": 62
       },
       {
         "id": 108,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 109,
         "count": 0,
         "delta": 0,
-        "checks": 7897
+        "checks": 8157
       },
       {
         "id": 110,
         "count": 0,
         "delta": 0,
-        "checks": 649
+        "checks": 668
       },
       {
         "id": 112,
-        "count": 60,
-        "delta": 1,
-        "checks": 60
+        "count": 62,
+        "delta": 13,
+        "checks": 62
       },
       {
         "id": 113,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 114,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 115,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 116,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 117,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 120,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 121,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 122,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 123,
-        "count": 360,
-        "delta": 6,
-        "checks": 2321
+        "count": 434,
+        "delta": 91,
+        "checks": 2458
       },
       {
         "id": 124,
@@ -634,81 +634,81 @@
         "id": 128,
         "count": 0,
         "delta": 0,
-        "checks": 195
+        "checks": 245
       },
       {
         "id": 129,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 130,
         "count": 0,
         "delta": 0,
-        "checks": 5627
+        "checks": 5803
       },
       {
         "id": 131,
         "count": 0,
         "delta": 0,
-        "checks": 5098
+        "checks": 5259
       },
       {
         "id": 132,
-        "count": 60,
-        "delta": 1,
-        "checks": 5098
+        "count": 62,
+        "delta": 13,
+        "checks": 5259
       },
       {
         "id": 133,
         "count": 0,
         "delta": 0,
-        "checks": 66
+        "checks": 68
       },
       {
         "id": 134,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 135,
-        "count": 60,
-        "delta": 1,
-        "checks": 5098
+        "count": 62,
+        "delta": 13,
+        "checks": 5259
       },
       {
         "id": 136,
         "count": 0,
         "delta": 0,
-        "checks": 2496
+        "checks": 2649
       }
     ],
     "notices": [
       {
         "id": 104,
-        "count": 7,
+        "count": 4,
         "delta": 0,
-        "checks": 36
+        "checks": 38
       },
       {
         "id": 4,
-        "count": 7,
-        "delta": 1,
-        "checks": 67
+        "count": 6,
+        "delta": 4,
+        "checks": 68
       },
       {
         "id": 201,
         "count": 0,
         "delta": 0,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 202,
         "count": 0,
         "delta": 0,
-        "checks": 415
+        "checks": 439
       },
       {
         "id": 203,
@@ -736,9 +736,9 @@
       },
       {
         "id": 207,
-        "count": 170,
-        "delta": -1,
-        "checks": 195
+        "count": 219,
+        "delta": 219,
+        "checks": 245
       },
       {
         "id": 208,
@@ -756,94 +756,94 @@
         "id": 210,
         "count": 0,
         "delta": 0,
-        "checks": 120
+        "checks": 124
       },
       {
         "id": 211,
         "count": 0,
         "delta": 0,
-        "checks": 120
+        "checks": 124
       },
       {
         "id": 212,
-        "count": 3,
-        "delta": 2,
-        "checks": 66
+        "count": 0,
+        "delta": 0,
+        "checks": 68
       },
       {
         "id": 213,
-        "count": 1,
+        "count": 2,
         "delta": 1,
-        "checks": 60
+        "checks": 62
       },
       {
         "id": 214,
-        "count": 131,
-        "delta": 9,
-        "checks": 7897
+        "count": 135,
+        "delta": 33,
+        "checks": 8157
       },
       {
         "id": 215,
         "count": 0,
         "delta": 0,
-        "checks": 2496
+        "checks": 2649
       },
       {
         "id": 216,
         "count": 0,
         "delta": 0,
-        "checks": 728
+        "checks": 764
       },
       {
         "id": 217,
-        "count": 38,
-        "delta": 0,
-        "checks": 728
+        "count": 50,
+        "delta": 9,
+        "checks": 764
       },
       {
         "id": 218,
         "count": 0,
         "delta": 0,
-        "checks": 294
+        "checks": 314
       }
     ],
     "topIssues": [
+      18,
       2,
+      106,
       103,
-      112,
-      1,
-      125
+      112
     ],
     "hidden": {},
     "fixed": {
       "1": 2,
-      "2": 9,
-      "4": 4,
+      "2": 11,
+      "4": 21,
       "6": 8,
       "7": 4,
-      "8": 103,
+      "8": 114,
       "9": 1,
-      "13": 0,
-      "18": 1,
-      "102": 2,
-      "103": 5,
-      "104": 6,
+      "13": 1,
+      "18": 14,
+      "102": 25,
+      "103": 20,
+      "104": 12,
       "105": 1,
-      "106": 17,
-      "112": 44,
-      "123": 182,
+      "106": 54,
+      "112": 127,
+      "123": 763,
       "125": 0,
-      "132": 11,
-      "135": 230,
+      "132": 94,
+      "135": 480,
       "205": 0,
-      "207": 22,
-      "212": 5,
-      "213": 15,
-      "214": 193,
-      "217": 104
+      "207": 240,
+      "212": 9,
+      "213": 20,
+      "214": 411,
+      "217": 166
     },
     "statusCodeGroups": {
-      "2": 77,
+      "2": 78,
       "3": 4,
       "4": 2,
       "5": 1
@@ -851,42 +851,42 @@
     "excludedChecks": [],
     "settingsChanged": true,
     "jsRendering": null,
-    "snapshot_id": "64f5d93beff66a06316bf8cb",
+    "snapshot_id": "64fac2c9eff66a0631ec33cf",
     "snapshot_version": 15,
-    "pages_crawled": 84,
-    "pages_limit": 1000,
-    "finish_date": 1693834253492,
+    "pages_crawled": 85,
+    "pages_limit": 8056,
+    "finish_date": 1694156084061,
     "quality": {
-      "value": 84,
-      "delta": 0
+      "value": 80,
+      "delta": -1
     },
     "user_agent_type": 7,
     "new": {
       "1": 3,
-      "2": 11,
-      "4": 11,
+      "2": 13,
+      "4": 27,
       "6": 8,
       "7": 4,
-      "8": 105,
+      "8": 119,
       "9": 1,
-      "13": 4,
-      "18": 1,
-      "102": 2,
-      "103": 29,
-      "104": 13,
+      "13": 5,
+      "18": 21,
+      "102": 37,
+      "103": 44,
+      "104": 16,
       "105": 1,
-      "106": 19,
-      "112": 104,
-      "123": 542,
+      "106": 74,
+      "112": 189,
+      "123": 1197,
       "125": 1,
-      "132": 71,
-      "135": 290,
+      "132": 156,
+      "135": 542,
       "205": 2,
-      "207": 192,
-      "212": 8,
-      "213": 16,
-      "214": 324,
-      "217": 142
+      "207": 459,
+      "212": 9,
+      "213": 22,
+      "214": 546,
+      "217": 216
     }
   },
   "is_notify": false,
@@ -898,16 +898,16 @@
   },
   "xdefault": 0,
   "sitemaps": {
-    "crawledPages": 25,
-    "totalPages": 195,
+    "crawledPages": 26,
+    "totalPages": 245,
     "count": 10,
     "reprUrl": "https://rubick.ai/post-sitemap.xml",
     "status": "HAVE_HEALTHY"
   },
   "canonicalization": {
-    "emptyOrWithoutCanonicalLink": 24,
-    "selfCanonical": 26,
-    "canonicalToOtherPage": 34
+    "emptyOrWithoutCanonicalLink": 23,
+    "selfCanonical": 27,
+    "canonicalToOtherPage": 35
   },
   "uploadUrlsCount": 0,
   "crawlSourceUrl": null,

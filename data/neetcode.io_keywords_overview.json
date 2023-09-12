@@ -1,0 +1,38 @@
+{
+  "createdAt": "2023-09-11T11:12:18.070Z",
+  "domain": "neetcode.io",
+  "data": [
+    {
+      "Domain": "neetcode.io",
+      "Rank": "207028",
+      "Organic Keywords": "3310",
+      "Organic Traffic": "6461",
+      "Organic Cost": "4252",
+      "Adwords Keywords": "0",
+      "Adwords Traffic": "0",
+      "Adwords Cost": "0",
+      "Intent Unknown Positions": "0",
+      "Intent Commercial Positions": "463",
+      "Intent Informational Positions": "2483",
+      "Intent Navigational Positions": "503",
+      "Intent Transactional Positions": "638",
+      "Intent Unknown Traffic": "0",
+      "Intent Commercial Traffic": "56",
+      "Intent Informational Traffic": "1683",
+      "Intent Navigational Traffic": "4764",
+      "Intent Transactional Traffic": "234",
+      "Intent Unknown Traffic Cost": "0",
+      "Intent Commercial Traffic Cost": "414",
+      "Intent Informational Traffic Cost": "3386",
+      "Intent Navigational Traffic Cost": "796",
+      "Intent Transactional Traffic Cost": "120",
+      "SERP Features Positions": "7",
+      "SERP Features Positions Branded": "3",
+      "SERP Features Traffic": "79",
+      "SERP Features Traffic Branded": "18",
+      "SERP Features Traffic Cost": "0",
+      "SERP Features Positions New": "1",
+      "SERP Features Positions Lost": "0"
+    }
+  ]
+}

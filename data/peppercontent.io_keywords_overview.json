@@ -1,0 +1,38 @@
+{
+  "createdAt": "2023-09-11T11:33:36.045Z",
+  "domain": "peppercontent.io",
+  "data": [
+    {
+      "Domain": "peppercontent.io",
+      "Rank": "66352",
+      "Organic Keywords": "31916",
+      "Organic Traffic": "24306",
+      "Organic Cost": "29620",
+      "Adwords Keywords": "0",
+      "Adwords Traffic": "0",
+      "Adwords Cost": "0",
+      "Intent Unknown Positions": "0",
+      "Intent Commercial Positions": "10400",
+      "Intent Informational Positions": "23712",
+      "Intent Navigational Positions": "920",
+      "Intent Transactional Positions": "893",
+      "Intent Unknown Traffic": "0",
+      "Intent Commercial Traffic": "3219",
+      "Intent Informational Traffic": "17325",
+      "Intent Navigational Traffic": "2636",
+      "Intent Transactional Traffic": "4211",
+      "Intent Unknown Traffic Cost": "0",
+      "Intent Commercial Traffic Cost": "6976",
+      "Intent Informational Traffic Cost": "18650",
+      "Intent Navigational Traffic Cost": "5712",
+      "Intent Transactional Traffic Cost": "2023",
+      "SERP Features Positions": "1571",
+      "SERP Features Positions Branded": "5",
+      "SERP Features Traffic": "9884",
+      "SERP Features Traffic Branded": "5",
+      "SERP Features Traffic Cost": "15209",
+      "SERP Features Positions New": "55",
+      "SERP Features Positions Lost": "30"
+    }
+  ]
+}

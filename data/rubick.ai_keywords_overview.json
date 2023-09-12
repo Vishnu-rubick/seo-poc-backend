@@ -1,0 +1,38 @@
+{
+  "createdAt": "2023-09-11T11:12:17.994Z",
+  "domain": "rubick.ai",
+  "data": [
+    {
+      "Domain": "rubick.ai",
+      "Rank": "37873776",
+      "Organic Keywords": "13",
+      "Organic Traffic": "0",
+      "Organic Cost": "0",
+      "Adwords Keywords": "0",
+      "Adwords Traffic": "0",
+      "Adwords Cost": "0",
+      "Intent Unknown Positions": "0",
+      "Intent Commercial Positions": "11",
+      "Intent Informational Positions": "5",
+      "Intent Navigational Positions": "0",
+      "Intent Transactional Positions": "0",
+      "Intent Unknown Traffic": "0",
+      "Intent Commercial Traffic": "0",
+      "Intent Informational Traffic": "0",
+      "Intent Navigational Traffic": "0",
+      "Intent Transactional Traffic": "0",
+      "Intent Unknown Traffic Cost": "0",
+      "Intent Commercial Traffic Cost": "0",
+      "Intent Informational Traffic Cost": "0",
+      "Intent Navigational Traffic Cost": "0",
+      "Intent Transactional Traffic Cost": "0",
+      "SERP Features Positions": "0",
+      "SERP Features Positions Branded": "0",
+      "SERP Features Traffic": "0",
+      "SERP Features Traffic Branded": "0",
+      "SERP Features Traffic Cost": "0",
+      "SERP Features Positions New": "0",
+      "SERP Features Positions Lost": "0"
+    }
+  ]
+}
