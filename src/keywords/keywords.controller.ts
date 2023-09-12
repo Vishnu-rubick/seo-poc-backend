@@ -1,6 +1,7 @@
 import { Controller, Get, NotFoundException, Param, Query } from '@nestjs/common';
 import { ApiOperation } from '@nestjs/swagger';
 import { KeywordsService } from './keywords.service';
+import { GetKeywordsDto } from './dto/get-keyword.dto';
 
 @Controller('keywords')
 export class KeywordsController {
@@ -21,11 +22,9 @@ export class KeywordsController {
     @ApiOperation({ summary: 'Keywords', description: 'Fetches Keywords for all the competitors along with root domain' })
     async getKeywords(
         @Param('projectId') projectId: string,
-        @Query('offset') offset: number,
-        @Query('limit') limit: number,
-        @Query('type') type: string,
+        @Query() query: GetKeywordsDto,
     ) {
         if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
-        return await this.keywordsService.getKeywords(projectId, type, offset, limit);
+        return await this.keywordsService.getKeywords(projectId, query.type, query.offset, query.limit);
     }
 }
