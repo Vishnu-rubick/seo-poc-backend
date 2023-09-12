@@ -135,6 +135,7 @@ export class KeywordsService {
     }
 
     async getKeywordsDashboard(projectId: string) {
+        await this.fetchKeywords(projectId);
         const commonData = await this.commonService.fetchFileData(`./data/${projectId}_common_data.json`);
         const allKeywords = await this.getAllKeywords(commonData);
         const sharedKeywords = await this.getSharedKeywords(commonData);
