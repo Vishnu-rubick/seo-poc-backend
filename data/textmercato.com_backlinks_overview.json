@@ -1,0 +1,22 @@
+{
+  "createdAt": "2023-09-12T10:27:01.082Z",
+  "domain": "textmercato.com",
+  "data": [
+    {
+      "ascore": "26",
+      "total": "1064",
+      "domains_num": "177",
+      "urls_num": "881",
+      "ips_num": "221",
+      "ipclassc_num": "200",
+      "follows_num": "384",
+      "nofollows_num": "687",
+      "sponsored_num": "0",
+      "ugc_num": "0",
+      "texts_num": "1024",
+      "images_num": "53",
+      "forms_num": "0",
+      "frames_num": "0"
+    }
+  ]
+}
