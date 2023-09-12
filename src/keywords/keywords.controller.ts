@@ -17,16 +17,6 @@ export class KeywordsController {
         return await this.keywordsService.getKeywordsDashboard(projectId);
     }
 
-    @Get(':projectId/fetch')
-    @ApiOperation({ summary: 'Keywords', description: 'Fetches Keywords for all the competitors along with root domain' })
-    async fetchKeywords(
-        @Param('projectId') projectId: string,
-    ) {
-        if(!projectId)  throw new NotFoundException('project Id cannot be NULL');
-        return await this.keywordsService.fetchKeywords(projectId);
-    }
-
-
     @Get(':projectId')
     @ApiOperation({ summary: 'Keywords', description: 'Fetches Keywords for all the competitors along with root domain' })
     async getKeywords(
