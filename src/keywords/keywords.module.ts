@@ -17,7 +17,7 @@ import { ProjectService } from 'src/project/project.service';
     HttpModule,
   ],
   controllers: [KeywordsController],
-  providers: [KeywordsService, KeywordsRepository, S3Service, CommonService, ],
+  providers: [KeywordsService, KeywordsRepository, S3Service, CommonService],
   exports: [KeywordsService, KeywordsRepository]
 })
 export class KeywordsModule {}

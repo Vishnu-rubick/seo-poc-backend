@@ -119,12 +119,10 @@ export class KeywordsService {
                         keywordDifficulty: keywordDifficulty,
                         searchVolume: searchVolume
                     }
-                }
-                competitors.forEach((competitor) => {
-                    if(!commonData[keyword].hasOwnProperty(competitor)){
+                    competitors.forEach((competitor) => {
                         commonData[keyword][competitor] = false
-                    }
-                })
+                    })
+                }
                 commonData[keyword][domain] = true
             });
         }));
@@ -144,6 +142,12 @@ export class KeywordsService {
         const weakKeywords = await this.getWeakKeywords(commonData);
         const untappedKeywords = await this.getUntappedKeywords(commonData);
         const strongKeywords = await this.getStrongKeywords(commonData);
+        let chartObj = {};
+
+        const config = await this.commonService.getConfig();
+        const domains = [config.domain, ...config.competitors];
+
+        await this.getChartObj(projectId, 0, "", domains, chartObj);
 
         return {
             message: "Success",
@@ -154,8 +158,43 @@ export class KeywordsService {
                 weakKeywords: weakKeywords.length,
                 untappedKeywords: untappedKeywords.length,
                 strongKeywords: strongKeywords.length,
+                chartObj: chartObj
             }
         }
+    }
+
+    async getCommonCount(projectId: string, domains: string[]){
+        let res = 0;
+        const data = await this.commonService.fetchFileData(`./data/${projectId}_common_data.json`);
+
+        for (let key of Object.keys(data)) {
+            let obj = data[key], fg = true;
+            for(let domain of domains){
+                if(!data[key][domain]){
+                    fg = false;
+                    break;
+                }
+            }
+            if(!fg) continue;
+            else res++;
+        }
+
+        return res;
+    }
+
+    async getChartObj(projectId: string, idx: number, key: string, domains: string[], chartObj: any){
+        if(idx == domains.length){
+            if(!key.length) return;
+            key = key.slice(1);
+            let domains = key.split('_');
+            chartObj[key] = await this.getCommonCount(projectId, domains);
+            return;
+        }
+        let temp = key;
+        key = key + `_${domains[idx]}`
+        this.getChartObj(projectId, idx+1, key, domains, chartObj);
+        key = temp;
+        this.getChartObj(projectId, idx+1, key, domains, chartObj);
     }
 
     async getKeywords(projectId: string, type: string = "all", offset: number = 0, limit: number = 10){

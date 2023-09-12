@@ -12,6 +12,7 @@ import { ProjectModule } from './project/project.module';
 import { S3Service } from './utils/s3.service';
 import { KeywordsModule } from './keywords/keywords.module';
 import { CommonService } from './utils/common.service';
+import { BacklinksModule } from './backlinks/backlinks.module';
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ dotenv.config();
     SiteAuditModule,
     ProjectModule,
     KeywordsModule,
+    BacklinksModule,
   ],
   controllers: [AppController, ProjectController],
   providers: [AppService, SiteAuditService, ProjectService, S3Service, CommonService],
