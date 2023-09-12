@@ -159,6 +159,7 @@ export class KeywordsService {
     }
 
     async getKeywords(projectId: string, type: string = "all", offset: number = 0, limit: number = 10){
+        await this.fetchKeywords(projectId);
         const commonData = await this.commonService.fetchFileData(`./data/${projectId}_common_data.json`);
 
         let data = [];
