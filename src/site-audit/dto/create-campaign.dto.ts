@@ -22,6 +22,10 @@ export class RunAuditDto {
     @ApiProperty()
     @IsBoolean()
     crawlSubdomains?: boolean;
+
+    @ApiProperty()
+    @IsBoolean()
+    crawlFrequency?: number;
     
     @ApiProperty()
     @IsString()

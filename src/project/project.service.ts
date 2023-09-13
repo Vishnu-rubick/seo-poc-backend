@@ -108,6 +108,7 @@ export class ProjectService {
         // return conf;
 
         configDto.domain = this.commonService.normalizeDomain(configDto.domain);
+
         let project: ProjectDocument = await this.findProject({
             user_id: new Types.ObjectId(userId),
             domain: configDto.domain

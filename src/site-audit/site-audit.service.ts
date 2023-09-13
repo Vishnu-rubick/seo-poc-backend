@@ -4,10 +4,13 @@ import { ConflictException, ForbiddenException, Injectable, NotFoundException, S
 import { ConfigService } from '@nestjs/config';
 import { catchError, map } from 'rxjs';
 import { join } from 'path';
+import { Types } from 'mongoose';
 
 import * as fs from 'fs';
 import { UpdateCampaignDto } from './dto/update-campaign.dto';
 import { S3Service } from 'src/utils/s3.service';
+import { ProjectService } from 'src/project/project.service';
+import { ProjectDocument } from 'src/project/schemas/project.schema';
 
 @Injectable()
 export class SiteAuditService {
@@ -17,13 +20,14 @@ export class SiteAuditService {
     constructor(
         private http: HttpService,
         private s3Service: S3Service,
-        private configService: ConfigService
+        private configService: ConfigService,
+        private projectService: ProjectService,
     ) {
         this.SEM_RUSH_API_KEY = configService.get('SEM_RUSH_API_KEY');
         this.SEM_RUSH_BASE_URL = configService.get('SEM_RUSH_BASE_URL');
     }
 
-    async runAudit(projectId: string, domain: string, pageLimit: number, crawlSubdomains: boolean) {
+    async runAudit(userId: string, projectId: string, domain: string, pageLimit: number, crawlSubdomains: boolean, crawlFrequency: number) {
         const prevCampaignData: any = await this.fetchCampaign(projectId);
         if(prevCampaignData && prevCampaignData.status != 'FINISHED'){
             return {
@@ -31,6 +35,13 @@ export class SiteAuditService {
                 message: "An audit is already running. Please wait for it to finish..."
             };
         }
+        const project: ProjectDocument = await this.projectService.getProject(userId);
+
+        await this.projectService.updateProject(project._id, {
+            updated_by: new Types.ObjectId(userId),
+            crawl_frequency: crawlFrequency
+        })
+        
         const editSettings = await this.updateCampaign(projectId, {
             pageLimit: pageLimit,
             crawlSubdomains: crawlSubdomains,

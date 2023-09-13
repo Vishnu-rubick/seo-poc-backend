@@ -33,8 +33,9 @@ export class SiteAuditController {
     @ApiOperation({ summary: 'Runs the Audit', description: 'Starts running the audit for the input project Id' })
     async runAudit(
         @Body() runAuditDto: RunAuditDto,
+        @Query('userId') userId: string
     ) {
-        return await this.siteAuditService.runAudit(runAuditDto.projectId, runAuditDto.domain, runAuditDto.pageLimit, runAuditDto.crawlSubdomains);
+        return await this.siteAuditService.runAudit(userId, runAuditDto.projectId, runAuditDto.domain, runAuditDto.pageLimit, runAuditDto.crawlSubdomains, runAuditDto.crawlFrequency);
     }
 
     @Get('/competitorAnalysis/:projectId')
