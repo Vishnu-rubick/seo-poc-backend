@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Transform } from 'class-transformer';
 import {
     IsOptional,
     IsString,
@@ -16,6 +17,7 @@ export class RunAuditDto {
     projectId?: string;
 
     @ApiProperty()
+    @Transform(({value}) => parseInt(value))
     @IsNumber()
     pageLimit?: number;
 
@@ -24,7 +26,8 @@ export class RunAuditDto {
     crawlSubdomains?: boolean;
 
     @ApiProperty()
-    @IsBoolean()
+    @Transform(({value}) => parseInt(value))
+    @IsNumber()
     crawlFrequency?: number;
     
     @ApiProperty()
