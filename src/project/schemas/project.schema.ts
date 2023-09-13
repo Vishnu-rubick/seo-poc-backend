@@ -38,10 +38,10 @@ export class Project {
     domain: string;
 
     @Prop({ lowercase: true })
-    industry_id: Types.ObjectId;
+    industry_id: string;
 
     @Prop({ lowercase: true })
-    geography_id: Types.ObjectId;
+    geography_id: string;
 
     @Prop({ lowercase: true })
     competitors: string[];

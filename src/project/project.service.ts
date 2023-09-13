@@ -75,7 +75,9 @@ export class ProjectService {
             crawl_frequency: 0,
             crawl_limit: pageLimit,
             is_exclude_subdomains: crawlSubdomains,
-            updated_by: new Types.ObjectId(userId)
+            updated_by: new Types.ObjectId(userId),
+            geography_id: configDto.geography,
+            industry_id: configDto.industry,
         })
 
         // creating a project

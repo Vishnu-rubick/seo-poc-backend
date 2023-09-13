@@ -49,4 +49,10 @@ export class CreateProjectDto {
     @ApiProperty()
     @IsString()
     updated_by: Types.ObjectId
+
+    @ApiProperty()
+    industry_id: string;
+
+    @ApiProperty()
+    geography_id: string;
 }

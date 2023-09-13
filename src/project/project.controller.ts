@@ -14,14 +14,6 @@ export class ProjectController {
         private readonly projectService: ProjectService
     ) {}
 
-    @Post()
-    async createProject(
-        @Body() createProjectDto: CreateProjectDto,
-        @Query('userId') userId: string
-    ) {
-        return await this.projectService.createSemProject(createProjectDto);
-    }
-
     @Get('/config')
     async getConfig(
         @Query('userId') userId: string
