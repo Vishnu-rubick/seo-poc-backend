@@ -85,17 +85,14 @@ export class ProjectService {
             domainUrl: configDto.domain,
             name: `testing-${configDto.domain}-${project._id}`   // For development
         })
-        console.log("Sb hogya 1")
 
         //enabling site-audit
         await this.enableSiteAudit(semProject.data.project_id, configDto.domain, pageLimit, crawlSubdomains);
-        console.log("Sb hogya 2")
 
         await this.updateProject(project._id, {
             semProjectId: semProject.data.project_id,
             updated_by: new Types.ObjectId(userId)
         })
-        console.log("Sb hogya 3")
     }
 
     async saveConfig(configDto: ConfigDto, userId: string) {
@@ -117,6 +114,13 @@ export class ProjectService {
 
         if(!project || !project.semProjectId){
             await this.setup(userId, configDto, 400);
+            project = await this.getProject(userId);
+        }
+        else{
+            await this.updateProject(project._id, {
+                updated_by: new Types.ObjectId(userId),
+                competitors: configDto.competitors
+            })
             project = await this.getProject(userId);
         }
 
