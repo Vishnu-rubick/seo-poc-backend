@@ -114,7 +114,6 @@ export class SiteAuditService {
         const objCreatedAt: Date = campaignData ? new Date(campaignData.createdAt) : currentDate;
         const timeDifference: number = currentDate.getTime() - objCreatedAt.getTime();
         const fiveMinutesInMilliseconds: number = 5 * 60 * 1000;
-        console.log("diff => ", timeDifference > fiveMinutesInMilliseconds)
 
         if(!campaignData || (campaignData.status != 'FINISHED' && timeDifference > fiveMinutesInMilliseconds)) {
             console.log("campaign fetched :)")
@@ -258,7 +257,7 @@ export class SiteAuditService {
 
     // Returns List of issues present on the project and its basic description along with its category
     async getIssues(projectId: string, crawlSubdomains: boolean = false) {
-        let campaignData = await this.getCampaign(projectId);
+        let campaignData = await this.fetchFileData(`./data/${projectId}_campaign_data.json`);
         if(!campaignData)   throw new NotFoundException('Data not available. Please run an audit and wait for sometime...');
         let issuesData = campaignData.defects;
 
