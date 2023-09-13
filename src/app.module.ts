@@ -13,15 +13,21 @@ import { S3Service } from './utils/s3.service';
 import { KeywordsModule } from './keywords/keywords.module';
 import { CommonService } from './utils/common.service';
 import { BacklinksModule } from './backlinks/backlinks.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 dotenv.config();
 
 @Module({
   imports: [
+    MongooseModule.forRoot(process.env.MONGO_URI),
     ConfigModule.forRoot({
           envFilePath: ['.env.development'],
           isGlobal: true,
     }),
+    UsersModule,
+    AuthModule,
     HttpModule,
     SiteAuditModule,
     ProjectModule,
