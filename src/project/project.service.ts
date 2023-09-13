@@ -108,7 +108,7 @@ export class ProjectService {
         // return conf;
 
         let project: ProjectDocument = await this.findProject({
-            userId: new Types.ObjectId(userId),
+            user_id: new Types.ObjectId(userId),
             domain: configDto.domain
         })
 
