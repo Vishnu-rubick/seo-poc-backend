@@ -355,7 +355,7 @@ export class SiteAuditService {
     }
 
     async getDashboard(projectId: string) {
-        const campaignData = await this.fetchFileData(`./data/${projectId}_campaign_data.json`);
+        const campaignData = await this.getCampaign(projectId);
         const issueCategoryMap = await this.fetchFileData(`./data/issuesCategoryMapped.json`);
 
         const issueFreq = campaignData?.defects;
