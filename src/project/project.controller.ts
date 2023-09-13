@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, NotFoundException, Post, Query } from '@nestjs/common';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { ProjectService } from './project.service';
 
@@ -16,27 +16,25 @@ export class ProjectController {
 
     @Post()
     async createProject(
-        @Body() createProjectDto: CreateProjectDto
+        @Body() createProjectDto: CreateProjectDto,
+        @Query('userId') userId: string
     ) {
-        return await this.projectService.createProject(createProjectDto);
+        return await this.projectService.createSemProject(createProjectDto);
     }
 
     @Get('/config')
-    async getConfig() {
-        return await this.projectService.getConfig();
-    }
-
-    @Post('/setup')
-    async setup(
-        @Body() setupDto: SetupDto
+    async getConfig(
+        @Query('userId') userId: string
     ) {
-        return await this.projectService.setup(setupDto.domain, setupDto.pageLimit, setupDto?.crawlsubdomains);
+        if(!userId) return new NotFoundException('User ID is mandatory');
+        return await this.projectService.getProject(userId);
     }
 
     @Post('/config')
     async saveConfig(
-        @Body() configDto: ConfigDto
+        @Body() configDto: ConfigDto,
+        @Query('userId') userId: string
     ) {
-        return await this.projectService.saveConfig(configDto);
+        return await this.projectService.saveConfig(configDto, userId);
     }
 }

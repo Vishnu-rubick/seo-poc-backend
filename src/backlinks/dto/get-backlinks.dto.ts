@@ -24,4 +24,9 @@ export class GetBacklinksDto {
     @IsNotEmpty()
     @Transform(({value}) => parseInt(value))
     limit: number;
+    
+    @ApiProperty()
+    @IsString()
+    @IsNotEmpty()
+    userId: string;
 }

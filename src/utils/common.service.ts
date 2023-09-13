@@ -3,6 +3,10 @@ import { Parser } from '@json2csv/plainjs';
 
 import * as fs from 'fs';
 import * as csvjson from 'csvjson';
+import { InjectModel } from '@nestjs/mongoose';
+import { Project, ProjectDocument } from 'src/project/schemas/project.schema';
+import { Model } from 'mongoose';
+import { ProjectService } from 'src/project/project.service';
 
 @Injectable()
 export class CommonService {
@@ -20,22 +24,26 @@ export class CommonService {
         return jsonData;
     }
 
-    async getConfig() {
-        const config: any = await this.fetchFileData(`./data/config.json`);
-        if(!config || Object.keys(config).length == 0) throw new NotFoundException('No config data found');
+    // async getProject(userId: string){
+    //     return await this.projectService.getProject(userId);
+    // }
 
-        let projectId = null;
+    // async getProject(userId: string) {
+    //     const config: any = await this.fetchFileData(`./data/config.json`);
+    //     if(!config || Object.keys(config).length == 0) throw new NotFoundException('No config data found');
 
-        const projects = await this.fetchFileData(`./data/projects_data.json`);
-        if(projects.hasOwnProperty(config?.domain)){
-            projectId = projects[config?.domain].projectId;
-        }
+    //     let projectId = null;
 
-        return {
-            ...config,
-            projectId: projectId
-        }
-    }
+    //     const projects = await this.fetchFileData(`./data/projects_data.json`);
+    //     if(projects.hasOwnProperty(config?.domain)){
+    //         projectId = projects[config?.domain].projectId;
+    //     }
+
+    //     return {
+    //         ...config,
+    //         projectId: projectId
+    //     }
+    // }
 
     async fetchFileData(filePath: string){
         let content = '';

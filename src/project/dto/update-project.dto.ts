@@ -12,15 +12,7 @@ import {
 import { DomainInfoType } from '../schemas/project.schema';
 import { Types } from 'mongoose';
 
-export class CreateProjectDto {
-    @ApiProperty()
-    @IsString()
-    user_id: Types.ObjectId;
-
-    @ApiProperty()
-    @IsString()
-    name: string;
-
+export class UpdateProjectDto {
     @ApiProperty()
     @IsNumber()
     crawl_frequency?: number;
@@ -34,19 +26,14 @@ export class CreateProjectDto {
     is_exclude_subdomains?: boolean;
 
     @ApiProperty()
-    @IsString()
-    domain: string;
-
-    @ApiProperty()
     @IsArray()
-    competitors: string[];
+    competitors?: string[];
 
     @ApiProperty()
-    @IsOptional()
     @IsString()
     semProjectId?: string;
-
+    
     @ApiProperty()
     @IsString()
-    updated_by: Types.ObjectId
+    updated_by: Types.ObjectId;
 }

@@ -7,6 +7,7 @@ import {
     IsNumber,
     ValidateNested,
     isArray,
+    IsArray,
 } from 'class-validator';
 
 export class ConfigDto {
@@ -23,5 +24,6 @@ export class ConfigDto {
     geography: string;
 
     @ApiProperty()
+    @IsArray()
     competitors: string[];
 }

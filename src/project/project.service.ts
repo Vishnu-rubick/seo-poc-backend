@@ -10,6 +10,10 @@ import { HttpService } from '@nestjs/axios';
 import { S3Service } from 'src/utils/s3.service';
 import { ConfigService } from '@nestjs/config';
 import { CommonService } from 'src/utils/common.service';
+import { InjectModel } from '@nestjs/mongoose';
+import { Project, ProjectDocument } from './schemas/project.schema';
+import { FilterQuery, Model, Types, _FilterQuery } from 'mongoose';
+import { UpdateProjectDto } from './dto/update-project.dto';
 
 @Injectable()
 export class ProjectService {
@@ -21,14 +25,14 @@ export class ProjectService {
         private http: HttpService,
         private s3Service: S3Service,
         private configService: ConfigService,
-        private commonService: CommonService
+        private commonService: CommonService,
     ) {
         this.SEM_RUSH_API_KEY = configService.get('SEM_RUSH_API_KEY');
         this.SEM_RUSH_BASE_URL = configService.get('SEM_RUSH_BASE_URL');
     }
 
-    async createProject(createProjectDto: CreateProjectDto) {
-        return await this.projectRepository.createProject(createProjectDto);
+    async createSemProject(createProjectDto: any) {
+        return await this.projectRepository.createSemProject(createProjectDto);
     }
 
     async enableSiteAudit(projectId: string, domain: string, pageLimit: number, crawlSubdomains: boolean) {
@@ -38,7 +42,7 @@ export class ProjectService {
         })
     }
 
-    async setup(domain: string, pageLimit: number, crawlSubdomains: boolean = false) {
+    async setup2(userId: string, domain: string, pageLimit: number, crawlSubdomains: boolean = false) {
         const projects: any = await this.commonService.fetchFileData(`./data/projects_data.json`)
 
         if(projects.hasOwnProperty(domain)){
@@ -46,7 +50,7 @@ export class ProjectService {
         }
 
         // creating a project
-        const project: any = await this.createProject({
+        const project: any = await this.createSemProject({
             domainUrl: domain,
             name: `testing-${domain}`   // For development
         })
@@ -59,27 +63,75 @@ export class ProjectService {
         }
 
         await this.commonService.saveFile(`./data/projects_data.json`, JSON.stringify(projects))
-
         return project;
     }
 
-    
+    async setup(userId: string, configDto: ConfigDto, pageLimit: number, crawlSubdomains: boolean = false) {
+        let project: ProjectDocument = await this.projectRepository.create({
+            user_id: new Types.ObjectId(userId),
+            domain: configDto.domain,
+            competitors: configDto.competitors,
+            name: configDto.domain,
+            crawl_frequency: 0,
+            crawl_limit: pageLimit,
+            is_exclude_subdomains: crawlSubdomains,
+            updated_by: new Types.ObjectId(userId)
+        })
 
-    async saveConfig(configDto: ConfigDto) {
-        await this.commonService.saveFile(`./data/config.json`, JSON.stringify(configDto));
+        // creating a project
+        let semProject: any = await this.createSemProject({
+            domainUrl: configDto.domain,
+            name: `testing-${configDto.domain}-${project._id}`   // For development
+        })
+        console.log("Sb hogya 1")
 
-        let conf: any = await this.commonService.getConfig();
-        if(!conf?.projectId){
-            await this.setup(conf.domain, 400);
-            conf = await this.commonService.getConfig();
-        }
-        
-        await this.fetchCompetitorAnalysis(conf.projectId, [conf.domain, ...conf.competitors]);
-        return conf;
+        //enabling site-audit
+        await this.enableSiteAudit(semProject.data.project_id, configDto.domain, pageLimit, crawlSubdomains);
+        console.log("Sb hogya 2")
+
+        await this.updateProject(project._id, {
+            semProjectId: semProject.data.project_id,
+            updated_by: new Types.ObjectId(userId)
+        })
+        console.log("Sb hogya 3")
     }
 
-    async getConfig(){
-        return await this.commonService.getConfig();
+    async saveConfig(configDto: ConfigDto, userId: string) {
+        // await this.commonService.saveFile(`./data/config.json`, JSON.stringify(configDto));
+
+        // let conf: any = await this.getProject(userId);
+        // if(!conf?.projectId){
+        //     await this.setup(conf.domain, 400);
+        //     conf = await this.getProject(userId);
+        // }
+        
+        // await this.fetchCompetitorAnalysis(conf.projectId, [conf.domain, ...conf.competitors]);
+        // return conf;
+
+        let project: ProjectDocument = await this.findProject({
+            userId: new Types.ObjectId(userId),
+            domain: configDto.domain
+        })
+
+        if(!project || !project.semProjectId){
+            await this.setup(userId, configDto, 400);
+            project = await this.getProject(userId);
+        }
+
+        await this.fetchCompetitorAnalysis(project.semProjectId, [project.domain, ...project.competitors]);
+        return project;
+    }
+
+    async findProject(filterQuery: FilterQuery<Project>): Promise<ProjectDocument> {
+        return await this.projectRepository.findOne(filterQuery);
+    }
+
+    async getProject(userId: string): Promise<ProjectDocument> {
+        return await this.projectRepository.getProject(userId);
+    }
+
+    async updateProject(projectId: string, updateProjectDto: UpdateProjectDto): Promise<void> {
+        await this.projectRepository.updateProject(projectId, updateProjectDto);
     }
     
     async fetchCompetitorAnalysis(projectId: string, targetDomainsList: string[]) {

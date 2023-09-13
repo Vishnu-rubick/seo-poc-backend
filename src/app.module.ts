@@ -10,12 +10,12 @@ import { ProjectController } from './project/project.controller';
 import { ProjectService } from './project/project.service';
 import { ProjectModule } from './project/project.module';
 import { S3Service } from './utils/s3.service';
-import { KeywordsModule } from './keywords/keywords.module';
 import { CommonService } from './utils/common.service';
-import { BacklinksModule } from './backlinks/backlinks.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
+// import { KeywordsModule } from './keywords/keywords.module';
+// import { BacklinksModule } from './backlinks/backlinks.module';
 
 dotenv.config();
 
@@ -31,10 +31,10 @@ dotenv.config();
     HttpModule,
     SiteAuditModule,
     ProjectModule,
-    KeywordsModule,
-    BacklinksModule,
+    // KeywordsModule,
+    // BacklinksModule,
   ],
   controllers: [AppController, ProjectController],
-  providers: [AppService, SiteAuditService, ProjectService, S3Service, CommonService],
+  providers: [AppService, ProjectService, CommonService, SiteAuditService, S3Service],
 })
 export class AppModule {}

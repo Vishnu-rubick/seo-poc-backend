@@ -30,4 +30,9 @@ export class GetKeywordsDto {
     @IsNotEmpty()
     @IsIn(["all", "shared", "missing", "weak", "untapped", "strong"])
     type: string;
+
+    @ApiProperty()
+    @IsString()
+    @IsNotEmpty()
+    userId: string;
 }
