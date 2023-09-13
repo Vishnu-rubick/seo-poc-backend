@@ -14,6 +14,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Project, ProjectDocument } from './schemas/project.schema';
 import { FilterQuery, Model, Types, _FilterQuery } from 'mongoose';
 import { UpdateProjectDto } from './dto/update-project.dto';
+import * as url from 'url';
 
 @Injectable()
 export class ProjectService {
@@ -106,6 +107,14 @@ export class ProjectService {
         
         // await this.fetchCompetitorAnalysis(conf.projectId, [conf.domain, ...conf.competitors]);
         // return conf;
+
+        const urlString = configDto.domain;
+        const parsedUrl = new url.URL(urlString);
+        configDto.domain = parsedUrl.hostname;
+
+        if (configDto.domain.startsWith('www.')) {
+            configDto.domain = configDto.domain.slice(4);
+        }
 
         let project: ProjectDocument = await this.findProject({
             user_id: new Types.ObjectId(userId),
