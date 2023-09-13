@@ -108,7 +108,10 @@ export class ProjectService {
         // await this.fetchCompetitorAnalysis(conf.projectId, [conf.domain, ...conf.competitors]);
         // return conf;
 
-        const urlString = configDto.domain;
+        let urlString = configDto.domain;
+        if(!urlString.startsWith('www.')) {
+            urlString = "www." + urlString
+        }
         const parsedUrl = new url.URL(urlString);
         configDto.domain = parsedUrl.hostname;
 
