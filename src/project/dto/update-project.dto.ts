@@ -36,4 +36,8 @@ export class UpdateProjectDto {
     @ApiProperty()
     @IsString()
     updated_by: Types.ObjectId;
+
+    @ApiProperty()
+    @IsOptional()
+    snapshot_id?: string;
 }

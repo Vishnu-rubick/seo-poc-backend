@@ -52,6 +52,12 @@ export class SiteAuditService {
         const runAuditResponse = await this.http.post(`${this.SEM_RUSH_BASE_URL}/reports/v1/projects/${projectId}/siteaudit/launch?key=${this.SEM_RUSH_API_KEY}`).toPromise();
         const snapshotId = runAuditResponse.data.snapshot_id;
         const campaignData = await this.fetchCampaign(projectId);
+
+        await this.projectService.updateProject(project._id, {
+            updated_by: new Types.ObjectId(userId),
+            snapshot_id: snapshotId
+        })
+
         return {
             statusCode: 200,
             message: "Audit is running",
@@ -70,7 +76,8 @@ export class SiteAuditService {
             const campaignData = await this.http.get(apiUrl).toPromise();
             const data = campaignData.data;
             if(!data)   throw new NotFoundException();
-    
+
+            data.createdAt = new Date()
             // save Data in json w.r.t its projectId
             // fs.writeFileSync(`./data/${projectId}_campaign_data${data.crawlSubdomains ? '_subDomains' : ''}.json`, JSON.stringify(data, null, 2), 'utf-8');
             fs.writeFileSync(`./data/${projectId}_campaign_data.json`, JSON.stringify(data, null, 2), 'utf-8');
@@ -103,7 +110,14 @@ export class SiteAuditService {
         //     if(fs.existsSync(`./data/${projectId}_campaign_data_subDomains.json`)) campaignDataSubDomains = await this.fetchFileData(`./data/${projectId}_campaign_data_subDomains.json`);
         // }
         let isFetchedIssueAndPageDetails = false;
-        if(!campaignData || campaignData.status != 'FINISHED') {
+        const currentDate: Date = new Date(); 
+        const objCreatedAt: Date = campaignData ? new Date(campaignData.createdAt) : currentDate;
+        const timeDifference: number = currentDate.getTime() - objCreatedAt.getTime();
+        const fiveMinutesInMilliseconds: number = 5 * 60 * 1000;
+        console.log("diff => ", timeDifference > fiveMinutesInMilliseconds)
+
+        if(!campaignData || (campaignData.status != 'FINISHED' && timeDifference > fiveMinutesInMilliseconds)) {
+            console.log("campaign fetched :)")
             campaignData = await this.fetchCampaign(projectId);
             if(campaignData.status == 'FINISHED'){
                 isFetchedIssueAndPageDetails = true;
@@ -172,7 +186,9 @@ export class SiteAuditService {
         data = await this.fetchFileData(`./data/${projectId}_campaign_data.json`);
         if(!data)   throw new NotFoundException('Data not available. Please run an audit and wait for sometime...');
 
-        const snapshotId = data.current_snapshot.snapshot_id;
+        const project: ProjectDocument = await this.projectService.findProject({semProjectId: projectId});
+        const snapshotId = project.snapshot_id;
+
         const defects = data.defects;
         for(const issueId in defects){
             const limit = defects[issueId];
@@ -242,7 +258,7 @@ export class SiteAuditService {
 
     // Returns List of issues present on the project and its basic description along with its category
     async getIssues(projectId: string, crawlSubdomains: boolean = false) {
-        let campaignData = await this.fetchFileData(`./data/${projectId}_campaign_data.json`);
+        let campaignData = await this.getCampaign(projectId);
         if(!campaignData)   throw new NotFoundException('Data not available. Please run an audit and wait for sometime...');
         let issuesData = campaignData.defects;
 
@@ -429,6 +445,7 @@ export class SiteAuditService {
 
     async getPagesDetails(projectId: string, page: number, type?: string) {
         const pagesDetails = await this.fetchFileData(`./data/${projectId}_pages_description.json`);
+        if(!pagesDetails)   return [];
         let campaignData = await this.fetchFileData(`./data/${projectId}_campaign_data.json`);
 
         let result = []

@@ -48,6 +48,9 @@ export class Project {
 
     @Prop()
     semProjectId: string;
+
+    @Prop()
+    snapshot_id?: string;
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);

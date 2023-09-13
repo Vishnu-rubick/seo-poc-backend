@@ -55,4 +55,8 @@ export class CreateProjectDto {
 
     @ApiProperty()
     geography_id: string;
+
+    @ApiProperty()
+    @IsOptional()
+    snapshot_id?: string;
 }
