@@ -230,11 +230,30 @@ export class SiteAuditService {
         if(!issuesData) throw new NotFoundException('Unable to Get Issues Descriptions');
 
         let result = []
-        // let low = page*10, high = Math.min(issuesData.length, low + 10);
-        let low = page*10, high = issuesData.length;
+        
+        const groupedCounts = issuesData.reduce((result, item) => {
+            const sourceUrl = item.source_url;
+          
+            if (!result[sourceUrl]) {
+              result[sourceUrl] = 1;
+            } else {
+              result[sourceUrl]++;
+            }
+          
+            return result;
+        }, {});
+          
+          // Convert the groupedCounts object to an array of objects with 'pageUrl' and 'count'
+        const resultArray = Object.keys(groupedCounts).map((pageUrl) => ({
+            pageUrl,
+            count: groupedCounts[pageUrl],
+        }));
 
+        // let low = page*10, high = Math.min(issuesData.length, low + 10);
+        let low = page*10, high = resultArray.length;
+        
         for(let idx = low; idx < high; ++idx){
-            result.push(issuesData[idx])
+            result.push(resultArray[idx])
         }
 
         // Paginated issues Description
@@ -450,6 +469,8 @@ export class SiteAuditService {
         let result = []
         // let low = page*10, high = Math.min(pagesDetails.length, page*10 + 10);
         let low = 0, high = pagesDetails.length;
+
+
         for(let idx = low; idx < high; ++idx){
             let pageObj = pagesDetails[idx]
             let issues = pageObj.issues;
@@ -476,12 +497,31 @@ export class SiteAuditService {
                 };
             })
 
+            const groupedCounts = issues.reduce((result, item) => {
+                const dataTitle = item.data.title;
+              
+                if (!result[dataTitle]) {
+                  result[dataTitle] = 1;
+                } else {
+                  result[dataTitle]++;
+                }
+              
+                return result;
+            }, {});
+              
+            // Convert the groupedCounts object to an array of objects with 'key' and 'count'
+            const resultArray = Object.keys(groupedCounts).map((key) => ({
+                issueTitle: key,
+                count: groupedCounts[key],
+            }));
+              
+
             result.push({
                 pageUrl: pageObj.pageUrl,
                 noOfIssues: pageObj.issues.length,
                 category: categories,
                 priority: priorities,
-                issues: pageObj.issues
+                issues: resultArray
             })
         }
         

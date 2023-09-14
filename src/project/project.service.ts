@@ -181,13 +181,13 @@ export class ProjectService {
             formattedJson.push({
                 'Domain': domainObj.target, 
                 'Domain Authority': 'NA',
-                'Organic Search Traffic': domainObj?.search_organic || 0,
+                'Organic Search Traffic': domainObj?.search_organic || 'NA',
                 // 'Organic Keywords': 'Coming Soon',
-                'Paid Search Traffic': domainObj?.search_paid || 0,
-                'Visitors': domainObj?.visits || 0,
-                'Unique Visitors': domainObj?.users || 0,
-                'Avg. Visit Duration': domainObj?.time_on_site || 0,
-                'Bounce Rate': domainObj?.bounce_rate || 0,
+                'Paid Search Traffic': domainObj?.search_paid || 'NA',
+                'Visitors': domainObj?.visits || 'NA',
+                'Unique Visitors': domainObj?.users || 'NA',
+                'Avg. Visit Duration': domainObj?.time_on_site || 'NA',
+                'Bounce Rate': domainObj?.bounce_rate || 'NA',
                 'Traffic Share': ((domainObj?.visits/totalVisits) * 100) || 100,
             });
         });
